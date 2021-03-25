@@ -1,84 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo使用攻略-添加分类及标签</title>
-    <url>/2021/03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h2 id="1、创建“分类”选项"><a href="#1、创建“分类”选项" class="headerlink" title="1、创建“分类”选项"></a>1、创建“分类”选项</h2><h3 id="1-1-生成“分类”页并添加tpye属性"><a href="#1-1-生成“分类”页并添加tpye属性" class="headerlink" title="1.1 生成“分类”页并添加tpye属性"></a>1.1 生成“分类”页并添加tpye属性</h3><p>打开命令行，进入博客所在文件夹。执行命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>生成categories后打开，找到index.md这个文件，打开后默认内容是这样的</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 文章分类
-date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 文章分类
-date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
-type: <span class="token string">"categories"</span>
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="1-2-给文章添加“categories”属性"><a href="#1-2-给文章添加“categories”属性" class="headerlink" title="1.2 给文章添加“categories”属性"></a>1.2 给文章添加“categories”属性</h3><p>打开需要添加分类的文章，为其添加categories属性。下方的categories: web前端表示添加这篇文章到“web前端”这个分类。注意：hexo一篇文章只能属于一个分类，也就是说如果在“- web前端”下方添加“-xxx”，hexo不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 分类
-date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
-categories: hexo
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="2、创建“标签”选项"><a href="#2、创建“标签”选项" class="headerlink" title="2、创建“标签”选项"></a>2、创建“标签”选项</h2><h3 id="生成“标签”页并添加tpye属性"><a href="#生成“标签”页并添加tpye属性" class="headerlink" title="生成“标签”页并添加tpye属性"></a>生成“标签”页并添加tpye属性</h3><p>打开命令行，进入博客所在文件夹。执行命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page tags<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>打开命令行，进入博客所在文件夹。执行命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>生成tags后打开，找到index.md这个文件，打开后默认内容是这样的</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 标签
-date: <span class="token number">2017</span>-05-27 <span class="token number">14</span>:22:08
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
-title: 文章分类
-date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
-type: <span class="token string">"tags"</span>
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>最后在文章中打上相应的tags就行了</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Live2d</title>
-    <url>/2021/03/23/live2d/</url>
-    <content><![CDATA[<p>成功配置看板娘<a href="https://www.bilibili.com/video/BV1QW411w7Da?t=40">https://www.bilibili.com/video/BV1QW411w7Da?t=40</a></p>
-
-<link rel="stylesheet" href="/live2d/css/live2d.css">
-
-<body>
-<div id="landlord">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-    <div class="hide-button">隐藏</div>
-</div>
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = 'https://white-x.top'
-</script>
-<script type="text/javascript" src="/live2d/js/live2d.js"></script>
-<script type="text/javascript" src="/live2d/js/message.js"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "/live2d/model/tia/model.json");
-</script>
-</body>]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo搭建</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>有关建站</title>
     <url>/2021/03/21/hello-world/</url>
     <content><![CDATA[<p>欢迎来到white-x(白筱)的小站 ! 这是根据B站教程利用github搭建的网站。</p>
@@ -132,6 +54,84 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
 <span class="token punctuation">&#123;</span>% img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> /yn.jpeg <span class="token punctuation">[</span><span class="token number">300</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>云南风景 <span class="token punctuation">[</span>风景图片<span class="token punctuation">]</span><span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span> 	//实例<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% youtube video_id %<span class="token punctuation">&#125;</span> 	//语法
 <span class="token punctuation">&#123;</span>% youtube ICkxRE_GdgI %<span class="token punctuation">&#125;</span>  //id在Url中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Live2d</title>
+    <url>/2021/03/23/live2d/</url>
+    <content><![CDATA[<p>成功配置看板娘<a href="https://www.bilibili.com/video/BV1QW411w7Da?t=40">https://www.bilibili.com/video/BV1QW411w7Da?t=40</a></p>
+
+<link rel="stylesheet" href="/live2d/css/live2d.css">
+
+<body>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://white-x.top'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>
+</body>]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo使用攻略-添加分类及标签</title>
+    <url>/2021/03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h2 id="1、创建“分类”选项"><a href="#1、创建“分类”选项" class="headerlink" title="1、创建“分类”选项"></a>1、创建“分类”选项</h2><h3 id="1-1-生成“分类”页并添加tpye属性"><a href="#1-1-生成“分类”页并添加tpye属性" class="headerlink" title="1.1 生成“分类”页并添加tpye属性"></a>1.1 生成“分类”页并添加tpye属性</h3><p>打开命令行，进入博客所在文件夹。执行命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成categories后打开，找到index.md这个文件，打开后默认内容是这样的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 文章分类
+date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 文章分类
+date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
+type: <span class="token string">"categories"</span>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-2-给文章添加“categories”属性"><a href="#1-2-给文章添加“categories”属性" class="headerlink" title="1.2 给文章添加“categories”属性"></a>1.2 给文章添加“categories”属性</h3><p>打开需要添加分类的文章，为其添加categories属性。下方的categories: web前端表示添加这篇文章到“web前端”这个分类。注意：hexo一篇文章只能属于一个分类，也就是说如果在“- web前端”下方添加“-xxx”，hexo不会产生两个分类，而是把分类嵌套（即该文章属于 “- web前端”下的 “-xxx ”分类）。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 分类
+date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
+categories: hexo
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="2、创建“标签”选项"><a href="#2、创建“标签”选项" class="headerlink" title="2、创建“标签”选项"></a>2、创建“标签”选项</h2><h3 id="生成“标签”页并添加tpye属性"><a href="#生成“标签”页并添加tpye属性" class="headerlink" title="生成“标签”页并添加tpye属性"></a>生成“标签”页并添加tpye属性</h3><p>打开命令行，进入博客所在文件夹。执行命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page tags<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>打开命令行，进入博客所在文件夹。执行命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成tags后打开，找到index.md这个文件，打开后默认内容是这样的</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 标签
+date: <span class="token number">2017</span>-05-27 <span class="token number">14</span>:22:08
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 文章分类
+date: <span class="token number">2021</span>-03-25 <span class="token number">21</span>:19:07
+type: <span class="token string">"tags"</span>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后在文章中打上相应的tags就行了</p>
 ]]></content>
       <categories>
         <category>Hexo</category>
