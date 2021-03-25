@@ -14,24 +14,24 @@
     <link href="https://WhiteXB.github.io" rel="prefetch" />
 
     
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<link rel="stylesheet" href="/css/aos.css">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../../css/aos.css">
+<link rel="stylesheet" href="../../../../css/style.css">
 
     
-<script src="/js/jquery.min.js"></script>
+<script src="../../../../js/jquery.min.js"></script>
 
     
-<script src="/js/bootstrap.min.js"></script>
+<script src="../../../../js/bootstrap.min.js"></script>
 
     
-<script src="/js/aos.js"></script>
+<script src="../../../../js/aos.js"></script>
 
     
-<script src="/js/highslide/highslide-full.min.js"></script>
+<script src="../../../../js/highslide/highslide-full.min.js"></script>
 
     
-<link rel="stylesheet" href="/js/highslide/highslide.css">
+<link rel="stylesheet" href="../../../../js/highslide/highslide.css">
 
     <style type="text/css">
         @media (max-width: 768px) {
@@ -46,12 +46,12 @@
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
-        avatar.src = '/imgs/avatar.jpg'
+        avatar.src = '../../../../imgs/avatar.jpg'
         var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
           previewsPreLoad.push(new Image())
-          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+          previewsPreLoad[previewsPreLoad.length - 1].src = '../../../../imgs/preview' + previews[i]
         }
       }
     </script>-->
@@ -77,15 +77,15 @@
             
             <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
             
-            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
-            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
-            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            <a href="../../../../archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="../../../../about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="../../../../message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
 
             
             <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
             
         </div>
-        <audio id="audio" src="/imgs/oni.mp3"></audio>
+        <audio id="audio" src="../../../../imgs/oni.mp3"></audio>
     </div>
 </div>
     
@@ -119,7 +119,7 @@
                 
                 
                 <li class="">
-                    <a href="/">
+                    <a href="../../../../index.html">
                         <i class="fa fa-home"></i>首页
                     </a>
                 </li>
@@ -127,7 +127,7 @@
                 
                 
                 <li class="">
-                    <a href="/archives">
+                    <a href="../../../../archives">
                         <i class="fa fa-archive"></i>归档
                     </a>
                 </li>
@@ -135,27 +135,55 @@
                 
                 
                 
-                <li class="">
-                    <a href="/categories">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-list"></i>分类
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
                 
                 
-                <li class="">
-                    <a href="/tags">
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
                         <i class="fa fa-tags"></i>标签
                     </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
                 </li>
                 
                 
                 
                 
                 <li class="">
-                    <a href="/about">
+                    <a href="../../../../about">
                         <i class="fa fa-user"></i>关于我
                     </a>
                 </li>
@@ -181,10 +209,17 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2021/03/21/hello-world/">有关建站</a>
+                <a href="">有关建站</a>
             </h1>
         </div>
         <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
+                
+            </span>
             
             <span class="label label-gal">
                 <i class="fa fa-calendar"></i> 2021-03-21
@@ -197,7 +232,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2021/03/21/hello-world/">有关建站</a>
+                    <a href="">有关建站</a>
                 </h4>
             </div>
             <p>
@@ -205,25 +240,67 @@
             </p>
             <p>
                 
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
+                
+                
                 
             </p>
         </center>
     </div>
     <div class="content-article">
         <p>欢迎来到white-x(白筱)的小站 ! 这是根据B站教程利用github搭建的网站。</p>
-<h2 id="hexo的基本指令"><a href="#hexo的基本指令" class="headerlink" title="hexo的基本指令"></a>hexo的基本指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g   //安装  </span><br><span class="line">npm update hexo -g 	  //升级 </span><br><span class="line">hexo version  	      //查看hexo的版本</span><br><span class="line">hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件</span><br><span class="line">hexo init nodejs-hexo    //创建博客</span><br><span class="line">hexo init blog          //初始化，生成文件夹为blog</span><br><span class="line"><span class="built_in">cd</span> blog  	             //进入blog文件夹</span><br><span class="line">npm install            //安装依赖库</span><br><span class="line">hexo generate           //生成一套静态网页</span><br><span class="line">hexo server         //运行测试,浏览器打开地址，http://localhost:4000/</span><br><span class="line">hexo deploy         //进行部署</span><br><span class="line"></span><br><span class="line">hexo new <span class="string">&quot;new article&quot;</span>  //新建文章‘new article’</span><br><span class="line">hexo new page <span class="string">&quot;about&quot;</span>  //新建页面 ‘about’</span><br><span class="line"></span><br><span class="line">hexo n <span class="string">&quot;我的博客&quot;</span>` == `hexo new` <span class="string">&quot;我的博客&quot;</span>    //新建文章</span><br><span class="line">hexo g == hexo generate        //生成`</span><br><span class="line">hexo s == hexo server          //启动服务预览</span><br><span class="line">hexo d == hexo deploy          //部署</span><br></pre></td></tr></table></figure>
-<h2 id="Hexo文章属性设置"><a href="#Hexo文章属性设置" class="headerlink" title="Hexo文章属性设置"></a>Hexo文章属性设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">设置 - - - - 描述 - - - - Default</span><br><span class="line">layout - - - - Layout - - - - post或page</span><br><span class="line">title - - - - 文章的标题 - - - -</span><br><span class="line">date - - - - 创建日期 - - - - 文件的创建日期</span><br><span class="line">updated - - - - 修改日期 - - - - 文件的修改日期</span><br><span class="line">comments - - - - 是否开启评论 - - - - <span class="literal">true</span></span><br><span class="line">tags - - - - 标签</span><br><span class="line">categories - - - - 分类</span><br><span class="line">permalink - - - - url中的名字 - - - - 文件名</span><br></pre></td></tr></table></figure>
+<h2 id="hexo的基本指令"><a href="#hexo的基本指令" class="headerlink" title="hexo的基本指令"></a>hexo的基本指令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo -g   //安装  
+<span class="token function">npm</span> update hexo -g 	  //升级 
+hexo version  	      //查看hexo的版本
+hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件
+hexo init nodejs-hexo    //创建博客
+hexo init blog          //初始化，生成文件夹为blog
+<span class="token builtin class-name">cd</span> blog  	             //进入blog文件夹
+<span class="token function">npm</span> <span class="token function">install</span>            //安装依赖库
+hexo generate           //生成一套静态网页
+hexo server         //运行测试,浏览器打开地址，http://localhost:4000/
+hexo deploy         //进行部署
+
+hexo new <span class="token string">"new article"</span>  //新建文章‘new article’
+hexo new page <span class="token string">"about"</span>  //新建页面 ‘about’
+
+hexo n <span class="token string">"我的博客"</span><span class="token variable"><span class="token variable">`</span> <span class="token operator">==</span> <span class="token variable">`</span></span>hexo new<span class="token variable"><span class="token variable">`</span> <span class="token string">"我的博客"</span>    //新建文章
+hexo g <span class="token operator">==</span> hexo generate        //生成<span class="token variable">`</span></span>
+hexo s <span class="token operator">==</span> hexo server          //启动服务预览
+hexo d <span class="token operator">==</span> hexo deploy          //部署<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Hexo文章属性设置"><a href="#Hexo文章属性设置" class="headerlink" title="Hexo文章属性设置"></a>Hexo文章属性设置</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">设置 - - - - 描述 - - - - Default
+layout - - - - Layout - - - - post或page
+title - - - - 文章的标题 - - - -
+<span class="token function">date</span> - - - - 创建日期 - - - - 文件的创建日期
+updated - - - - 修改日期 - - - - 文件的修改日期
+comments - - - - 是否开启评论 - - - - <span class="token boolean">true</span>
+tags - - - - 标签
+categories - - - - 分类
+permalink - - - - url中的名字 - - - - 文件名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="github上hexo搭建博客-绑定域名"><a href="#github上hexo搭建博客-绑定域名" class="headerlink" title="github上hexo搭建博客-绑定域名"></a>github上hexo搭建博客-绑定域名</h2><p>这里选择阿里云域名<br>登陆阿里云控制台，选择域名，选择要绑定的域名，点解析<br>解析页，添加记录，<br>记录类型 A<br>主机记录 WWW, @<br>记录值 填写对应的github的ip地址<br>Github的ip地址获取<br>clone 你创建的仓库, 用户名.github.io<br>输入 ping www.用户名.github.io<br>Ping sni.github.map.fastly.net [151.202.68.147], IP地址<br>在source目录下创建这个CNAME文件，输入域名<br>提交代码，点击域名，一般很快就生效。</p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% codeblock <span class="token punctuation">[</span>title<span class="token punctuation">]</span> <span class="token punctuation">[</span>lang:language<span class="token punctuation">]</span> <span class="token punctuation">[</span>url<span class="token punctuation">]</span> <span class="token punctuation">[</span>link text<span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span>
+code snippet
+<span class="token punctuation">&#123;</span>% endcodeblock %<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="普通的代码块"><a href="#普通的代码块" class="headerlink" title="普通的代码块"></a>普通的代码块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock %&#125;</span><br><span class="line">alert(<span class="string">&#x27;Hello World!&#x27;</span>);</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="普通的代码块"><a href="#普通的代码块" class="headerlink" title="普通的代码块"></a>普通的代码块</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% codeblock %<span class="token punctuation">&#125;</span>
+alert<span class="token punctuation">(</span><span class="token string">'Hello World!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span>% endcodeblock %<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="指定语言"><a href="#指定语言" class="headerlink" title="指定语言"></a>指定语言</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock lang:objc %&#125;</span><br><span class="line">[rectangle setX: 10 y: 10 width: 20 height: 20];</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="指定语言"><a href="#指定语言" class="headerlink" title="指定语言"></a>指定语言</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% codeblock lang:objc %<span class="token punctuation">&#125;</span>
+<span class="token punctuation">[</span>rectangle setX: <span class="token number">10</span> y: <span class="token number">10</span> width: <span class="token number">20</span> height: <span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#123;</span>% endcodeblock %<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="附加说明和网址"><a href="#附加说明和网址" class="headerlink" title="附加说明和网址"></a>附加说明和网址</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock _.compact http://underscorejs.org/<span class="comment">#compact Underscore.js %&#125;</span></span><br><span class="line">_.compact([0, 1, <span class="literal">false</span>, 2, <span class="string">&#x27;&#x27;</span>, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="附加说明和网址"><a href="#附加说明和网址" class="headerlink" title="附加说明和网址"></a>附加说明和网址</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% codeblock _.compact http://underscorejs.org/<span class="token comment">#compact Underscore.js %&#125;</span>
+_.compact<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>, <span class="token number">1</span>, false, <span class="token number">2</span>, <span class="token string">''</span>, <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token number">1</span>, <span class="token number">2</span>, <span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token punctuation">&#123;</span>% endcodeblock %<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Image-在文章中插入指定大小的图片。"><a href="#Image-在文章中插入指定大小的图片。" class="headerlink" title="Image 在文章中插入指定大小的图片。"></a>Image 在文章中插入指定大小的图片。</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% img [class names] /path/to/image [width] [height] [title text [alt text]] %&#125; 	//语法</span><br><span class="line">&#123;% img [class names] /yn.jpeg [300] [height] [云南风景 [风景图片]] %&#125; 	//实例</span><br></pre></td></tr></table></figure>
-<h2 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125; 	//语法</span><br><span class="line">&#123;% youtube ICkxRE_GdgI %&#125;  //id在Url中</span><br></pre></td></tr></table></figure>
+<h2 id="Image-在文章中插入指定大小的图片。"><a href="#Image-在文章中插入指定大小的图片。" class="headerlink" title="Image 在文章中插入指定大小的图片。"></a>Image 在文章中插入指定大小的图片。</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> /path/to/image <span class="token punctuation">[</span>width<span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>title text <span class="token punctuation">[</span>alt text<span class="token punctuation">]</span><span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span> 	//语法
+<span class="token punctuation">&#123;</span>% img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> /yn.jpeg <span class="token punctuation">[</span><span class="token number">300</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>云南风景 <span class="token punctuation">[</span>风景图片<span class="token punctuation">]</span><span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span> 	//实例<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% youtube video_id %<span class="token punctuation">&#125;</span> 	//语法
+<span class="token punctuation">&#123;</span>% youtube ICkxRE_GdgI %<span class="token punctuation">&#125;</span>  //id在Url中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
     </div>
 </article>
@@ -244,7 +321,7 @@
 <aside id="sidebar-search">
     <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
         <form class="form-inline clearfix" id="search-form" method="get"
-              action="/search/index.html">
+              action="../../../../search/index.html">
             <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
             <button class="btn btn-danger btn-gal" type="submit">
                 <i class="fa fa-search"></i>
@@ -260,7 +337,7 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="/imgs/avatar.jpg" width="140" height="140"
+            <img src="../../../../imgs/avatar.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
             <p class="author-description"></p>
         </div>
@@ -294,25 +371,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                    <a href="../../25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/23/live2d/">live2d</a>
+                    <a href="../../24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                    <a href="../../23/live2d/">Live2d</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/21/hello-world/">有关建站</a>
+                    <a href="../../22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="">有关建站</a>
                 </span>
             </li>
             
@@ -334,25 +417,31 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/21/hello-world/">有关建站</a>
+                    <a href="">有关建站</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/23/live2d/">live2d</a>
+                    <a href="../../23/live2d/">Live2d</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                    <a href="../../22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2021/03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                    <a href="../../24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
                 </span>
             </li>
             
@@ -367,23 +456,27 @@
 
                 
                 <li>
-                    <a href="/2021/03/21/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2021/03/21/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 
                 
                 <li>
-                    <a href="/2021/03/21/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
                 
             </ul>
             <div class="tab-content">
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 16.038078140194266px;" class="tag-cloud-link">hexo搭建</a>
+    
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 9.329601078107062px;" class="tag-cloud-link">计算机基础</a>
     
 </div>
                 
@@ -437,7 +530,7 @@
 </div>
 </body>
 
-<script src="/js/activate-power-mode.js"></script>
+<script src="../../../../js/activate-power-mode.js"></script>
 
 <script>
 
@@ -480,18 +573,18 @@
 </script>
 <script>
     window.slideConfig = {
-      prefix: '/imgs/slide/background',
+      prefix: '../../../../imgs/slide/background',
       ext: 'jpg',
       maxCount: '6'
     }
 </script>
 
-<script src="/js/hs.js"></script>
-<script src="/js/blog.js"></script>
+<script src="../../../../js/hs.js"></script>
+<script src="../../../../js/blog.js"></script>
 
 
 
-<script src="/js/oni.js"></script>
+<script src="../../../../js/oni.js"></script>
 
 
 
@@ -517,7 +610,7 @@
     }
 </script>
 
-<script src="/js/comment/gitment.js"></script>
+<script src="../../../../js/comment/gitment.js"></script>
 
 
 </html>
