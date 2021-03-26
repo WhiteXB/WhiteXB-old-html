@@ -175,9 +175,6 @@ type: <span class="token string">"tags"</span>
 
 <p>除以16取余，直到商为0  150的16进制为96</p>
 ]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
       <tags>
         <tag>计算机基础</tag>
       </tags>
@@ -193,11 +190,8 @@ type: <span class="token string">"tags"</span>
 <h3 id="2、模式-内模式"><a href="#2、模式-内模式" class="headerlink" title="2、模式/内模式"></a>2、模式/内模式</h3><p> 数据库中只有一个模式和一个内模式，所以模式/内模式的映射是唯一的，它定义了数据库的全局逻辑结构与存储结构之间的对应关系。当数据库的存储结构被改变时，数据库管理员对模式/内模式映射做相应的改变，可以使模式保持不变，应用程序相应地也不做变动。这样，保证了数据与程序的物理独立性。</p>
 <p><img src="http://r6d.cn/bedab" alt="alt"></p>
 ]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
       <tags>
-        <tag>计算机基础</tag>
+        <tag>计算机基础 数据库</tag>
       </tags>
   </entry>
 </search>
