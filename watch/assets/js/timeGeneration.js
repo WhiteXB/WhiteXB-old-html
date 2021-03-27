@@ -57,7 +57,23 @@ TimeGeneration.prototype = {
         for (m = 0; ; m++) {
             k = (this.CALENDAR_DATA[m] < 0xfff) ? 11 : 12;
             for (n = k; n >= 0; n--) {
-                if (total <= 29 + this._getbit(this.calendar_data[m], n)) { isend="true;" break; } total="total" - n); if (isend) var month="k" n 1; day="total;" (k="=" 12) (month="=" math.floor(this.calendar_data[m] 0x10000) 1) month;> Math.floor(this.CALENDAR_DATA[m] / 0x10000) + 1) {
+                if (total <= 29 + this._getBit(this.CALENDAR_DATA[m], n)) {
+                    isEnd = true;
+                    break;
+                }
+                total = total - 29 - this._getBit(this.CALENDAR_DATA[m], n);
+            }
+            if (isEnd) break;
+        }
+
+        var month = k - n + 1;
+        var day = total;
+
+        if (k == 12) {
+            if (month == Math.floor(this.CALENDAR_DATA[m] / 0x10000) + 1) {
+                month = 1 - month;
+            }
+            if (month > Math.floor(this.CALENDAR_DATA[m] / 0x10000) + 1) {
                 month--;
             }
         }
@@ -81,4 +97,3 @@ TimeGeneration.prototype = {
 }
 
 
-</=>
