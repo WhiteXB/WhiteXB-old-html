@@ -43,33 +43,26 @@
                 <canvas id="canvas" width="1100" height="680"></canvas>
                          <a> <img src="1.png"  /></a>
             </div>
-            <audio src="步束 - MOM.mp3" autoplay="autoplay"></audio>
+            
+            
+            <audio  id="bg-music" autoplay preload="auto" src="步束 - MOM.mp3" loop="loop"></audio>
         </div>
 
-    
-
-    <script>
-    
+ 
+<script>
     document.addEventListener('DOMContentLoaded', function () {
         function audioAutoPlay() {
-            $("#music")[0].play();
+            var audio = document.getElementById('bg-music');
+            audio.play();
             document.addEventListener("WeixinJSBridgeReady", function () {
-                $("#music")[0].play();
+                audio.play();
             }, false);
         }
         audioAutoPlay();
     });
-   
-    document.addEventListener('touchstart', function () {
-        function audioAutoPlay() {
-            //var audio = document.getElementById('music');
-            //audio.play();
-            $("#music")[0].play();
-        }
-        audioAutoPlay();
-    });
+</script>
 
-    </script>
+
 
     <script>
     (function(){
