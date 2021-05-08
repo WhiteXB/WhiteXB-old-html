@@ -44,12 +44,16 @@
                          <a> <img src="1.png"  /></a>
             </div>
             
-            <audio controls="" id="audio" loop=""><source src="步束 - MOM.mp3" type="audio/ogg" /> <source src="步束 - MOM.mp3" type="audio/mpeg" /> </audio>
+            
+            <audio style="display:none; height: 0" id="bg-music" preload="auto" src="步束 - MOM.mp3" loop="loop"></audio>
         </div>
 
  
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    $(document).ready(function(){
+            autoPlayMusic();
+            audioAutoPlay();
+        });
         function audioAutoPlay() {
             var audio = document.getElementById('bg-music');
             audio.play();
@@ -57,8 +61,34 @@
                 audio.play();
             }, false);
         }
-        audioAutoPlay();
-    });
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+
 </script>
 
 
