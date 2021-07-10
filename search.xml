@@ -229,14 +229,14 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
 <h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ol>
 <li>man [命令或配置文件]（功能描述：获得帮助信息）</li>
 <li>help 命令 （功能描述：获得shell内置命令的帮助信息）</li>
-<li>pwd <a href="%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84">选项</a> </li>
+<li>pwd [选项]（功能描述：显示当前工作目录的绝对路径）</li>
 <li>ls [选项]显示目录文件</li>
 <li>ll [选项]以列当前目录显示文件</li>
 <li>cd [选项] 定位  ..上一级</li>
 <li>ctrl+z 强制退出</li>
 <li>ctrl+x 暂停</li>
 </ol>
-<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><h3 id="pwd-选项"><a href="#pwd-选项" class="headerlink" title="pwd 选项"></a>pwd <a href="%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0%EF%BC%9A%E6%98%BE%E7%A4%BA%E5%BD%93%E5%89%8D%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95%E7%9A%84%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84">选项</a></h3><h3 id="ls-选项-显示目录文件"><a href="#ls-选项-显示目录文件" class="headerlink" title="ls [选项]显示目录文件"></a>ls [选项]显示目录文件</h3><h3 id="ll-选项-以列当前目录显示文件"><a href="#ll-选项-以列当前目录显示文件" class="headerlink" title="ll [选项]以列当前目录显示文件"></a>ll [选项]以列当前目录显示文件</h3><h3 id="cd-选项-定位-上一级"><a href="#cd-选项-定位-上一级" class="headerlink" title="cd [选项] 定位  ..上一级"></a>cd [选项] 定位  ..上一级</h3><h3 id="mkdir-选项-名字-要创建的目录"><a href="#mkdir-选项-名字-要创建的目录" class="headerlink" title="mkdir [选项] [名字] 要创建的目录"></a>mkdir [选项] [名字] 要创建的目录</h3><ol>
+<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><h3 id="pwd-选项-显示当前工作目录的绝对路径"><a href="#pwd-选项-显示当前工作目录的绝对路径" class="headerlink" title="pwd [选项] (显示当前工作目录的绝对路径)"></a>pwd [选项] (显示当前工作目录的绝对路径)</h3><h3 id="ls-选项-显示目录文件"><a href="#ls-选项-显示目录文件" class="headerlink" title="ls [选项]显示目录文件"></a>ls [选项]显示目录文件</h3><h3 id="ll-选项-以列当前目录显示文件"><a href="#ll-选项-以列当前目录显示文件" class="headerlink" title="ll [选项]以列当前目录显示文件"></a>ll [选项]以列当前目录显示文件</h3><h3 id="cd-选项-定位-上一级"><a href="#cd-选项-定位-上一级" class="headerlink" title="cd [选项] 定位  ..上一级"></a>cd [选项] 定位  ..上一级</h3><h3 id="mkdir-选项-名字-要创建的目录"><a href="#mkdir-选项-名字-要创建的目录" class="headerlink" title="mkdir [选项] [名字] 要创建的目录"></a>mkdir [选项] [名字] 要创建的目录</h3><ol>
 <li>-p ：创建多级目录</li>
 </ol>
 <h3 id="rmdir-选项-名字-指令删除空目录"><a href="#rmdir-选项-名字-指令删除空目录" class="headerlink" title="rmdir [选项] [名字] 指令删除空目录"></a>rmdir [选项] [名字] 指令删除空目录</h3><h3 id="rm-选项-名字-指令移除文件或目录-小心删库-rf"><a href="#rm-选项-名字-指令移除文件或目录-小心删库-rf" class="headerlink" title="rm [选项][名字]   指令移除文件或目录 小心删库 -rf"></a>rm [选项][名字]   指令移除文件或目录 小心删库 -rf</h3><ol>
