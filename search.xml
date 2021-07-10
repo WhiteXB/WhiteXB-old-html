@@ -205,4 +205,10 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
         <tag>数据库</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Linux 基础</title>
+    <url>/2021/07/10/linux-%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>linux 安装 java jdk<br>yum install java-devel</p>
+]]></content>
+  </entry>
 </search>
