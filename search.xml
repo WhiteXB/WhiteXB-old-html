@@ -208,7 +208,9 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
   <entry>
     <title>Linux 基础</title>
     <url>/2021/07/10/linux-%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="linux-安装-java"><a href="#linux-安装-java" class="headerlink" title="linux 安装 java"></a>linux 安装 java</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> java-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+    <content><![CDATA[<h2 id="linux-安装-java"><a href="#linux-安装-java" class="headerlink" title="linux 安装 java"></a>linux 安装 java</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> java-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>vim编辑器的使用</p>
+]]></content>
   </entry>
   <entry>
     <title>Python Wifi 破解以及生成密码库</title>
