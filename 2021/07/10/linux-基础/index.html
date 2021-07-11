@@ -260,7 +260,7 @@
     <div class="content-article">
         <h2 id="linux-虚拟机安装"><a href="#linux-虚拟机安装" class="headerlink" title="linux 虚拟机安装"></a>linux 虚拟机安装</h2><ol>
 <li>VMware 安装 然后使用镜像安装linux 配置网络 连接xshell</li>
-<li>ssh root@ip 22 在win控制台直接连接linux</li>
+<li>ssh -p 22 root@ip在win控制台直接连接linux</li>
 <li>shutdown –h now 立该进行关机</li>
 <li>shudown -h 1 “hello, 1 分钟后会关机了”</li>
 <li>shutdown –r now 现在重新启动计算机</li>
@@ -296,7 +296,8 @@
 <li>强制覆盖不提示的方法：\cp</li>
 <li>-r ：递归复制整个文件夹</li>
 </ol>
-<h3 id="mv-移动文件与目录或重命名"><a href="#mv-移动文件与目录或重命名" class="headerlink" title="mv 移动文件与目录或重命名"></a>mv 移动文件与目录或重命名</h3><h3 id="cat-名字-查看文件内容"><a href="#cat-名字-查看文件内容" class="headerlink" title="cat [名字]查看文件内容"></a>cat [名字]查看文件内容</h3><ol>
+<h3 id="mv-移动文件与目录或重命名"><a href="#mv-移动文件与目录或重命名" class="headerlink" title="mv 移动文件与目录或重命名"></a>mv 移动文件与目录或重命名</h3><p>mv oldNameFile newNameFile (功能描述：重命名)<br>mv /temp/movefile /targetFolder (功能描述：移动文件)<br>mv [文件名] [路径] </p>
+<h3 id="cat-名字-查看文件内容"><a href="#cat-名字-查看文件内容" class="headerlink" title="cat [名字]查看文件内容"></a>cat [名字]查看文件内容</h3><ol>
 <li>-n ：显示行号</li>
 </ol>
 <h3 id="more-名字-基于vi的文本过滤器"><a href="#more-名字-基于vi的文本过滤器" class="headerlink" title="more[名字]基于vi的文本过滤器"></a>more[名字]基于vi的文本过滤器</h3><h3 id="less指令用来分屏查看文件内容（适用于大文件）"><a href="#less指令用来分屏查看文件内容（适用于大文件）" class="headerlink" title="less指令用来分屏查看文件内容（适用于大文件）"></a>less指令用来分屏查看文件内容（适用于大文件）</h3><ol>
@@ -317,8 +318,41 @@
 <li>tail -n 5 文件 （功能描述：查看文件头5行内容，5可以是任意行数）</li>
 <li>tail -f 文件 （功能描述：实时追踪该文档的所有更新）<br>日志查看 </li>
 </ol>
-<h3 id="find-name-‘文件名’"><a href="#find-name-‘文件名’" class="headerlink" title="find -name ‘文件名’"></a>find -name ‘文件名’</h3><h2 id="vim编辑器的使用-vi为打开文件"><a href="#vim编辑器的使用-vi为打开文件" class="headerlink" title="vim编辑器的使用 vi为打开文件"></a>vim编辑器的使用 vi为打开文件</h2><p>vim 有三种基本模式 普通模式 编辑模式 命令行模式</p>
-<ol>
+<h3 id="文件追加"><a href="#文件追加" class="headerlink" title="文件追加"></a>文件追加</h3><ol>
+<li>ls -l &gt;文件 （功能描述：列表的内容写入文件a.txt中（覆盖写））</li>
+<li>ls -al &gt;&gt;文件 （功能描述：列表的内容追加到文件aa.txt的末尾）</li>
+<li>cat 文件1 &gt; 文件2 （功能描述：将文件1的内容覆盖到文件2）</li>
+<li>echo “内容”&gt;&gt; 文件</li>
+</ol>
+<h3 id="ln-s-原文件或目录-软链接名"><a href="#ln-s-原文件或目录-软链接名" class="headerlink" title="ln -s [原文件或目录] [软链接名]"></a>ln -s [原文件或目录] [软链接名]</h3><p>当我们使用pwd指令查看目录时，仍然看到的是软链接所在目录。</p>
+<h3 id="find-name-‘文件名’"><a href="#find-name-‘文件名’" class="headerlink" title="find -name ‘文件名’"></a>find -name ‘文件名’</h3><ol>
+<li>-name&lt;查询方式&gt; 按照指定的文件名查找模式查找文件</li>
+<li>-user&lt;用户名&gt; 查找属于指定用户名所有文件</li>
+<li>-size&lt;文件大小&gt; 按照指定的文件大小查找文件。</li>
+</ol>
+<h3 id="history指令-查看历史指令"><a href="#history指令-查看历史指令" class="headerlink" title="history指令 查看历史指令"></a>history指令 查看历史指令</h3><h3 id="date指令-显示当前日期"><a href="#date指令-显示当前日期" class="headerlink" title="date指令-显示当前日期"></a>date指令-显示当前日期</h3><ol>
+<li>date （功能描述：显示当前时间）</li>
+<li>date +%Y （功能描述：显示当前年份）</li>
+<li>date +%m （功能描述：显示当前月份）</li>
+<li>date +%d （功能描述：显示当前是哪一天）</li>
+<li>date “+%Y-%m-%d %H:%M:%S”（功能描述：显示年月日时分秒）</li>
+<li>date -s 字符串时间 设置时间</li>
+</ol>
+<h3 id="cal查看日历"><a href="#cal查看日历" class="headerlink" title="cal查看日历"></a>cal查看日历</h3><p>cal [选项]</p>
+<h3 id="locate-搜索文件"><a href="#locate-搜索文件" class="headerlink" title="locate 搜索文件"></a>locate 搜索文件</h3><p>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。</p>
+<h2 id="tab-自动补全代码或者命令，连续按两次"><a href="#tab-自动补全代码或者命令，连续按两次" class="headerlink" title="[tab]自动补全代码或者命令，连续按两次"></a>[tab]自动补全代码或者命令，连续按两次</h2><h3 id="grep指令和-管道符号"><a href="#grep指令和-管道符号" class="headerlink" title="grep指令和 管道符号 |"></a>grep指令和 管道符号 |</h3><p>grep [选项] 查找内容 源文件</p>
+<h3 id="gzip-gunzip-指令"><a href="#gzip-gunzip-指令" class="headerlink" title="gzip/gunzip 指令"></a>gzip/gunzip 指令</h3><ol>
+<li>gzip 用于压缩文件， gunzip 用于解压的</li>
+<li>gzip 文件 （功能描述：压缩文件，只能将文件压缩为*.gz文件）</li>
+<li>gunzip 文件.gz （功能描述：解压缩文件命令）<h3 id="zip-unzip-指令"><a href="#zip-unzip-指令" class="headerlink" title="zip/unzip 指令"></a>zip/unzip 指令</h3></li>
+<li>zip 用于压缩文件， unzip 用于解压的，这个在项目打包发布中很有用的</li>
+<li>zip [选项] XXX.zip 将要压缩的内容（功能描述：压缩文件和目录的命令）</li>
+<li>unzip [选项] XXX.zip （功能描述：解压缩文件） • zip常用选项</li>
+</ol>
+<p>-r：递归压缩，即压缩目录<br>4) unzip的常用选项<br>-d&lt;目录&gt; ：指定解压后文件的存放目录</p>
+<h3 id="tar-指令"><a href="#tar-指令" class="headerlink" title="tar 指令"></a>tar 指令</h3><ol>
+<li>tar 指令 是打包指令，最后打包后的文件是 .tar.gz 的文件。</li>
+<li>tar [选项] XXX.tar.gz 打包的内容 (功能描述：打包目录，压缩后的文件格式.tar.gz) <h2 id="vim编辑器的使用-vi为打开文件"><a href="#vim编辑器的使用-vi为打开文件" class="headerlink" title="vim编辑器的使用 vi为打开文件"></a>vim编辑器的使用 vi为打开文件</h2>vim 有三种基本模式 普通模式 编辑模式 命令行模式</li>
 <li>dd 删除该行</li>
 <li>u: 撤销之前一次操作</li>
 <li>yy 复制该行</li>
@@ -535,15 +569,15 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 8.622592855651906px;" class="tag-cloud-link">hexo搭建</a>
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 16.393456227785602px;" class="tag-cloud-link">hexo搭建</a>
     
-    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.165868963639284px;" class="tag-cloud-link">数据库</a>
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 19.091668885635205px;" class="tag-cloud-link">数据库</a>
     
-    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 14.267310597804565px;" class="tag-cloud-link">计算机基础</a>
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 18.02937394230324px;" class="tag-cloud-link">计算机基础</a>
     
-    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 15.560090125404168px;" class="tag-cloud-link">网络</a>
+    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.51884605576528px;" class="tag-cloud-link">网络</a>
     
-    <a href="../../../../tags/linux/" style="font-size: 14.993526373535197px;" class="tag-cloud-link">linux</a>
+    <a href="../../../../tags/linux/" style="font-size: 18.515128138051224px;" class="tag-cloud-link">linux</a>
     
 </div>
                 
