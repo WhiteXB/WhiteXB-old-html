@@ -101,7 +101,48 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
 <span class="token punctuation">&#123;</span>% img <span class="token punctuation">[</span>class names<span class="token punctuation">]</span> /yn.jpeg <span class="token punctuation">[</span><span class="token number">300</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>height<span class="token punctuation">]</span> <span class="token punctuation">[</span>云南风景 <span class="token punctuation">[</span>风景图片<span class="token punctuation">]</span><span class="token punctuation">]</span> %<span class="token punctuation">&#125;</span> 	//实例<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">&#123;</span>% youtube video_id %<span class="token punctuation">&#125;</span> 	//语法
 <span class="token punctuation">&#123;</span>% youtube ICkxRE_GdgI %<span class="token punctuation">&#125;</span>  //id在Url中<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-]]></content>
+<h2 id="插入音乐"><a href="#插入音乐" class="headerlink" title="插入音乐"></a>插入音乐</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> <span class="token operator">&lt;</span>audio <span class="token assign-left variable">style</span><span class="token operator">=</span><span class="token string">"display:none; height: 0"</span> <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token string">"bg-music"</span> <span class="token assign-left variable">preload</span><span class="token operator">=</span><span class="token string">"auto"</span> <span class="token assign-left variable">src</span><span class="token operator">=</span><span class="token string">"http://music.163.com/song/media/outer/url?id=1841002409.mp3"</span> <span class="token assign-left variable">loop</span><span class="token operator">=</span><span class="token string">"loop"</span><span class="token operator">></span><span class="token operator">&lt;</span>/audio<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token variable"><span class="token variable">$(</span>document<span class="token variable">)</span></span>.ready<span class="token punctuation">(</span><span class="token function-name function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            autoPlayMusic<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            audioAutoPlay<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">function</span> <span class="token function-name function">audioAutoPlay</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            var audio <span class="token operator">=</span> document.getElementById<span class="token punctuation">(</span><span class="token string">'bg-music'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            audio.play<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            document.addEventListener<span class="token punctuation">(</span><span class="token string">"WeixinJSBridgeReady"</span>, <span class="token function-name function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                audio.play<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>, <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        // 音乐播放
+        <span class="token keyword">function</span> <span class="token function-name function">autoPlayMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            <span class="token keyword">function</span> <span class="token function-name function">musicInBrowserHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                musicPlay<span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                document.body.removeEventListener<span class="token punctuation">(</span><span class="token string">'touchstart'</span>, musicInBrowserHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            document.body.addEventListener<span class="token punctuation">(</span><span class="token string">'touchstart'</span>, musicInBrowserHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            // 自动播放音乐效果，解决微信自动播放问题
+            <span class="token keyword">function</span> <span class="token function-name function">musicInWeixinHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                musicPlay<span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                document.addEventListener<span class="token punctuation">(</span><span class="token string">"WeixinJSBridgeReady"</span>, <span class="token function-name function">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    musicPlay<span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>, <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                document.removeEventListener<span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span>, musicInWeixinHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            document.addEventListener<span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span>, musicInWeixinHandler<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">function</span> musicPlay<span class="token punctuation">(</span>isPlay<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            var media <span class="token operator">=</span> document.querySelector<span class="token punctuation">(</span><span class="token string">'#bg-music'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>isPlay <span class="token operator">&amp;&amp;</span> media.paused<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                media.play<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>isPlay <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>media.paused<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                media.pause<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+
+<span class="token operator">&lt;</span>/script<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
