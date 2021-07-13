@@ -1191,47 +1191,7 @@
 </div>
 </body>
  <audio style="display:none; height: 0" id="bg-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=1841002409.mp3" loop="loop"></audio>
-<script>
-    $(document).ready(function(){
-            autoPlayMusic();
-            audioAutoPlay();
-        });
-        function audioAutoPlay() {
-            var audio = document.getElementById('bg-music');
-            audio.play();
-            document.addEventListener("WeixinJSBridgeReady", function () {
-                audio.play();
-            }, false);
-        }
-        // 音乐播放
-        function autoPlayMusic() {
-            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
-            function musicInBrowserHandler() {
-                musicPlay(true);
-                document.body.removeEventListener('touchstart', musicInBrowserHandler);
-            }
-            document.body.addEventListener('touchstart', musicInBrowserHandler);
-            // 自动播放音乐效果，解决微信自动播放问题
-            function musicInWeixinHandler() {
-                musicPlay(true);
-                document.addEventListener("WeixinJSBridgeReady", function () {
-                    musicPlay(true);
-                }, false);
-                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
-            }
-            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
-        }
-        function musicPlay(isPlay) {
-            var media = document.querySelector('#bg-music');
-            if (isPlay && media.paused) {
-                media.play();
-            }
-            if (!isPlay && !media.paused) {
-                media.pause();
-            }
-        }
 
-</script>
 <script src="js/activate-power-mode.js"></script>
 
 <script>
@@ -1311,4 +1271,45 @@
 <script type="text/javascript" src="/live2d/js/message.js"></script>
 <script type="text/javascript">
     loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>
+<script>
+    $(document).ready(function(){
+            autoPlayMusic();
+            audioAutoPlay();
+        });
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+
 </script>
