@@ -194,14 +194,6 @@ _.compact<span class="token punctuation">(</span><span class="token punctuation"
 <li>reboot 现在重新启动计算机</li>
 <li>sync 把内存的数据同步到磁盘.</li>
 </ol>
-<h2 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h2><ol>
-<li>useradd 用户名  添加用户名</li>
-<li>userdel 用户名  删除用户名</li>
-<li>su –    切换用户名</li>
-<li>groupadd 组名   新增用户组</li>
-<li>groupdel 组名   删除用户组</li>
-<li>useradd –g 用户组 用户名  增加用户时直接加上组</li>
-</ol>
 <h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ol>
 <li>man [命令或配置文件]（功能描述：获得帮助信息）</li>
 <li>help 命令 （功能描述：获得shell内置命令的帮助信息）</li>
@@ -458,6 +450,32 @@ print<span class="token punctuation">(</span><span class="token string">"生成�
 ]]></content>
       <tags>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux用户</title>
+    <url>/2021/07/13/linux%E7%94%A8%E6%88%B7/</url>
+    <content><![CDATA[<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><ol>
+<li>useradd 用户名  添加用户名</li>
+<li>userdel 用户名  删除用户名</li>
+<li>su –    切换用户名</li>
+<li>groupadd 组名   新增用户组</li>
+<li>groupdel 组名   删除用户组</li>
+<li>useradd –g 用户组 用户名  增加用户时直接加上组<br>7）su 用户 切换用户</li>
+</ol>
+<h3 id="etc-passwd-文件"><a href="#etc-passwd-文件" class="headerlink" title="/etc/passwd 文件"></a>/etc/passwd 文件</h3><p>/group /shadow<br>存放用户的口令<br>vim /etc/passwd  +:$<br>postdrop:x:90:<br>postfix:x:89:<br>tcpdump:x:72:<br>baixiao:x:1000:<br>lili:x:1001:</p>
+<h3 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h3><p>运行级别配置文件 vim /etc/inittab<br>0：关机<br>1：单用户<br>2：多用户无网络<br>3：单用户有网络<br>4：未使用保留（不指定）<br>5：图形界面<br>6：系统重启<br>命令 ：init [012356]<br>cen 只有35</p>
+<h3 id="密码找回"><a href="#密码找回" class="headerlink" title="密码找回"></a>密码找回</h3><p>运行级别面试题 进入机房即可操作</p>
+<ol>
+<li>首先我们进入开机界面，按e进行选</li>
+<li>UTF-8行尾添加 init=/bin/sh</li>
+<li>CTRL+X 执行</li>
+<li>passwd修改密码 默认修改root密码</li>
+<li>exec  /sbin/init</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>linux</tag>
       </tags>
   </entry>
 </search>
