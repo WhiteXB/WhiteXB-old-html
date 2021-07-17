@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="White-X">
+    
+    
+    
+    
+    
+    
+    <title>数据结构哈希表 | 白筱の猫舍</title>
+    <link href="https://WhiteXB.github.io" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../../css/aos.css">
+<link rel="stylesheet" href="../../../../css/style.css">
+
+    
+<script src="../../../../js/jquery.min.js"></script>
+
+    
+<script src="../../../../js/bootstrap.min.js"></script>
+
+    
+<script src="../../../../js/aos.js"></script>
+
+    
+<script src="../../../../js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="../../../../js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '../../../../imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '../../../../imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://WhiteXB.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="../../../../archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="../../../../about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="../../../../message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="../../../../imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://WhiteXB.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">白筱の猫舍</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="../../../../index.html">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="../../../../archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../../../tags/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="../../../../tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="../../../../about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://WhiteXB.github.io">白筱の猫舍</a>
+        >
+        <span>数据结构哈希表</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="">数据结构哈希表</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-07-17
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="">数据结构哈希表</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-07-17
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>实验项目名称：电话号码查询系统的实现<br>实验目的与要求:<br>1.基础知识:掌握数据结构中的查找、排序等算法相关知识;掌握C或VC++语言中程序设计的方法。<br>2.参考教材相关算法，完成以下程序功能:<br>(1)自选存储结构(顺序表或哈希表)实现电话号码表的初始化创建;<br>(2)编写一个电话号码查询系统，要求有电话号码记录的录入(插入)存储、查询、删除、打印、排序(顺序表存储结构必须有此功能，哈希表结构则不写此功能)等模块;<br>实验性质:验证性(4学时)<br>说明:当存储结构采用哈希表时此方式为推荐方式)，数据元素为结构体类型(成 员至少包括姓名、电话号码)，以电话号码或姓名为关键字构建哈希表，并进行查询、插入、删除、打印记录等功能模块，(其次子 函数的调用顺序由最终用户决定(可用多分支结构),程序中应有用户的操作选择界面。采用顺序存储结构时，数据元素也应为结构体类型(成员至少包括姓名、电话号码)构造成顺序表，自行设计元素存储(包括插入新元素)的顺序，以电话号码或姓名为关键字完成用户指定元素的查询、删除、排序操作，还应完成顺序表的打印操作。</p>
+<p>图源代码：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#include&lt;stdio.h></span>
+<span class="token comment">#include&lt;string.h></span>
+typedef int Status<span class="token punctuation">;</span>
+<span class="token comment">#define length 10</span>
+typedef struct list
+<span class="token punctuation">&#123;</span>
+    struct node *lnext<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>good<span class="token punctuation">;</span>
+good lis<span class="token punctuation">[</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>//去掉good被误以为声明变量
+struct node
+<span class="token punctuation">&#123;</span>
+    char name<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    char num<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    char address<span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    struct node *next<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+Status hash<span class="token punctuation">(</span>struct node record<span class="token punctuation">)</span>//11位电话号码相加，再取7的余数为哈希地址
+<span class="token punctuation">&#123;</span>
+    int <span class="token assign-left variable">key</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token assign-left variable">key</span><span class="token operator">=</span>key+<span class="token punctuation">(</span>int<span class="token punctuation">)</span><span class="token punctuation">(</span>record.num<span class="token punctuation">[</span>i<span class="token punctuation">]</span>-<span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>//强制转换为整形
+    <span class="token punctuation">&#125;</span>
+    <span class="token assign-left variable">key</span><span class="token operator">=</span>key%7<span class="token punctuation">;</span>
+    <span class="token builtin class-name">return</span> key<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status createnode<span class="token punctuation">(</span><span class="token punctuation">)</span>//插入电话记录
+<span class="token punctuation">&#123;</span>
+    struct node *temp<span class="token operator">=</span> new node<span class="token punctuation">;</span>
+    temp-<span class="token operator">></span>next<span class="token operator">=</span>NULL<span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"请输入姓名："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%s"</span>,temp-<span class="token operator">></span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"输入电话："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%s"</span>,temp-<span class="token operator">></span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"输入地址:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%s"</span>,temp-<span class="token operator">></span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    int <span class="token assign-left variable">k</span><span class="token operator">=</span>hash<span class="token punctuation">(</span>*temp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    struct list *p<span class="token operator">=</span><span class="token operator">&amp;</span>lis<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>p-<span class="token operator">></span>lnext<span class="token operator">!=</span>NULL<span class="token punctuation">)</span>
+    temp-<span class="token operator">></span>next<span class="token operator">=</span>p-<span class="token operator">></span>lnext<span class="token punctuation">;</span>
+    p-<span class="token operator">></span>lnext<span class="token operator">=</span>temp<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status showlist<span class="token punctuation">(</span><span class="token punctuation">)</span>//打印非空位元素
+<span class="token punctuation">&#123;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"姓名<span class="token entity" title="\t">\t</span><span class="token entity" title="\t">\t</span>电话号码<span class="token entity" title="\t">\t</span><span class="token entity" title="\t">\t</span>地址<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        struct node *q<span class="token operator">=</span>lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.lnext<span class="token punctuation">;</span>
+        
+        while<span class="token punctuation">(</span>q<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            printf<span class="token punctuation">(</span><span class="token string">"%s<span class="token entity" title="\t">\t</span><span class="token entity" title="\t">\t</span>%s<span class="token entity" title="\t">\t</span><span class="token entity" title="\t">\t</span>%s<span class="token entity" title="\n">\n</span>"</span>,q-<span class="token operator">></span>name,q-<span class="token operator">></span>num,q-<span class="token operator">></span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token assign-left variable">q</span><span class="token operator">=</span>q-<span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+Status find<span class="token punctuation">(</span>char nu<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>//查找
+<span class="token punctuation">&#123;</span>
+    int <span class="token assign-left variable">key</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    int <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token assign-left variable">key</span><span class="token operator">=</span>key+<span class="token punctuation">(</span>int<span class="token punctuation">)</span><span class="token punctuation">(</span>nu<span class="token punctuation">[</span>i<span class="token punctuation">]</span>-<span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token assign-left variable">key</span><span class="token operator">=</span>key%7<span class="token punctuation">;</span>
+    struct node *q<span class="token operator">=</span>lis<span class="token punctuation">[</span>key<span class="token punctuation">]</span>.lnext<span class="token punctuation">;</span>
+    while<span class="token punctuation">(</span>q<span class="token operator">!=</span>NULL<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            if<span class="token punctuation">(</span>nu<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>q-<span class="token operator">></span>num<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#123;</span>
+                <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token builtin class-name">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">&#123;</span>
+                <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+                <span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span>
+        if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            printf<span class="token punctuation">(</span><span class="token string">"姓名：%s<span class="token entity" title="\t">\t</span>电话：%s<span class="token entity" title="\t">\t</span>地址：%s<span class="token entity" title="\n">\n</span>"</span>,q-<span class="token operator">></span>name,q-<span class="token operator">></span>num,q-<span class="token operator">></span>address<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span>
+        <span class="token assign-left variable">q</span><span class="token operator">=</span>q-<span class="token operator">></span>next<span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+            printf<span class="token punctuation">(</span><span class="token string">"未找到<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status deletenode<span class="token punctuation">(</span>char nu<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+	int <span class="token assign-left variable">key</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    int <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token assign-left variable">key</span><span class="token operator">=</span>key+<span class="token punctuation">(</span>int<span class="token punctuation">)</span><span class="token punctuation">(</span>nu<span class="token punctuation">[</span>i<span class="token punctuation">]</span>-<span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token assign-left variable">key</span><span class="token operator">=</span>key%7<span class="token punctuation">;</span>
+    struct node *q<span class="token operator">=</span>lis<span class="token punctuation">[</span>key<span class="token punctuation">]</span>.lnext<span class="token punctuation">;</span>
+    struct node *p<span class="token operator">=</span>new node<span class="token punctuation">;</span>
+    if<span class="token punctuation">(</span>q<span class="token operator">==</span>NULL<span class="token punctuation">)</span>
+     printf<span class="token punctuation">(</span><span class="token string">"无此记录<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token keyword">else</span>
+     <span class="token punctuation">&#123;</span>
+     	for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+     	<span class="token punctuation">&#123;</span>
+     		for<span class="token punctuation">(</span>int <span class="token assign-left variable">j</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">11</span><span class="token punctuation">;</span>j++<span class="token punctuation">)</span>
+     		<span class="token punctuation">&#123;</span>
+     			if<span class="token punctuation">(</span>nu<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span>q-<span class="token operator">></span>num<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+     			<span class="token punctuation">&#123;</span>
+     				<span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+     				<span class="token builtin class-name">continue</span><span class="token punctuation">;</span>
+				 <span class="token punctuation">&#125;</span>
+				 <span class="token keyword">else</span>
+				 <span class="token punctuation">&#123;</span>
+				 	<span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+				 	<span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+				 <span class="token punctuation">&#125;</span>
+			 <span class="token punctuation">&#125;</span>
+			 if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+			 <span class="token punctuation">&#123;</span>
+			 	if<span class="token punctuation">(</span>i<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+			 	lis<span class="token punctuation">[</span>key<span class="token punctuation">]</span>.lnext<span class="token operator">=</span>q-<span class="token operator">></span>next<span class="token punctuation">;</span>
+			 	<span class="token assign-left variable">q</span><span class="token operator">=</span>NULL<span class="token punctuation">;</span>
+			 	delete q<span class="token punctuation">;</span>
+			 	printf<span class="token punctuation">(</span><span class="token string">"已删除<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+			 	<span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+			 <span class="token punctuation">&#125;</span>
+			 <span class="token keyword">else</span>
+			 <span class="token punctuation">&#123;</span>
+			 	<span class="token assign-left variable">p</span><span class="token operator">=</span>q<span class="token punctuation">;</span>
+			 	<span class="token assign-left variable">q</span><span class="token operator">=</span>q-<span class="token operator">></span>next<span class="token punctuation">;</span>
+			 	
+			 <span class="token punctuation">&#125;</span>
+			 
+     		if<span class="token punctuation">(</span>q<span class="token operator">==</span>NULL<span class="token punctuation">)</span>break<span class="token punctuation">;</span>
+		 <span class="token punctuation">&#125;</span>
+		 if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
+			 printf<span class="token punctuation">(</span><span class="token string">"信息不存在<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	 <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+Status OperateMenu<span class="token punctuation">(</span>int num<span class="token punctuation">)</span>//菜单函数
+<span class="token punctuation">&#123;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------****操作菜单****------<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	printf<span class="token punctuation">(</span><span class="token string">"------    0 退出系统<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    1 添加<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    2 查找<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    3 显示<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    4 删除<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    请选择你所需要的操作<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%d"</span>,<span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token builtin class-name">return</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    struct list lis<span class="token punctuation">[</span>length<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>length<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        lis<span class="token punctuation">[</span>i<span class="token punctuation">]</span>.lnext<span class="token operator">=</span>NULL<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+     int <span class="token assign-left variable">num</span><span class="token operator">=</span>-1<span class="token punctuation">;</span>  
+    while<span class="token punctuation">(</span>num<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">&#123;</span>
+       <span class="token assign-left variable">num</span><span class="token operator">=</span>OperateMenu<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    switch<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">case</span> <span class="token number">1</span>:createnode<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">2</span>:
+		char numb<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		printf<span class="token punctuation">(</span><span class="token string">"请输入要查找的电话号码:<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		scanf<span class="token punctuation">(</span><span class="token string">"%s"</span>,numb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		find<span class="token punctuation">(</span>numb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">3</span>:showlist<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">4</span>:
+		char numc<span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+		printf<span class="token punctuation">(</span><span class="token string">"请输入要删除的电话号码:<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		scanf<span class="token punctuation">(</span><span class="token string">"%s"</span>,numc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		deletenode<span class="token punctuation">(</span>numc<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="../../../../search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            White-X
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="../../../../imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="">数据结构哈希表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE/">数据结构图</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88/">数据结构栈</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A1%BA%E5%BA%8F%E8%A1%A8/">数据结构顺序表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../15/%E5%9C%A8linux%E8%99%9A%E6%8B%9F%E6%9C%BAkali%E4%B8%AD%E7%9A%84wifi%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB/">在Linux虚拟机kali中的wifi无线攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../13/linux%E7%94%A8%E6%88%B7/">Linux用户</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/23/live2d/">Live2d</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../10/linux-%E5%9F%BA%E7%A1%80/">Linux 基础</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/26/%E5%85%B3%E4%BA%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%93%E4%B8%9A%E6%9C%AF%E8%AF%AD%E5%92%8C%E5%85%B3%E7%B3%BB%E5%AE%9A%E4%B9%89/">关于数据库的专业术语和关系定义</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A1%BA%E5%BA%8F%E8%A1%A8/">数据结构顺序表</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 17.028933738809894px;" class="tag-cloud-link">hexo搭建</a>
+    
+    <a href="../../../../tags/linux/" style="font-size: 9.825749241358405px;" class="tag-cloud-link">linux</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 10.11559599991306px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 12.994612761069625px;" class="tag-cloud-link">网络</a>
+    
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 17.79534805951633px;" class="tag-cloud-link">计算机基础</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/" style="font-size: 11.436397481015291px;" class="tag-cloud-link">数据结构、c语言</a>
+    
+    <a href="../../../../tags/kali%E3%80%81%E7%BD%91%E7%BB%9C%E3%80%81linux/" style="font-size: 18.753105384506025px;" class="tag-cloud-link">kali、网络、linux</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 9.516104052744609px;" class="tag-cloud-link">数据结构</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://www.snut.com" target="_blank">陕西理工大学</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/WhiteXB" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/33440117" target="_blank">B站</a>
+    </li>
+    
+    <li>
+        <a href="https://white-x.top/ForMother-master/index.html" target="_blank">母亲节礼物</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2021 White-X Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="../../../../js/activate-power-mode.js"></script>
+
+
+<audio style="display:none; height: 0" id="bg-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=1841002409.mp3" loop="loop"></audio>
+<script>
+    $(document).ready(function(){
+            autoPlayMusic();
+            audioAutoPlay();
+        });
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+
+</script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '../../../../imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="../../../../js/hs.js"></script>
+<script src="../../../../js/blog.js"></script>
+
+
+
+<script src="../../../../js/oni.js"></script>
+
+
+
+
+</html>
+
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+</head>
+<body>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://white-x.top'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>

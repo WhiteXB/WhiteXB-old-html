@@ -10,7 +10,7 @@
     
     
     
-    <title>Linux 基础 | 白筱の猫舍</title>
+    <title>数据结构栈 | 白筱の猫舍</title>
     <link href="https://WhiteXB.github.io" rel="prefetch" />
 
     
@@ -211,13 +211,13 @@
         <i class="fa fa-home"></i>
         <a href="https://WhiteXB.github.io">白筱の猫舍</a>
         >
-        <span>Linux 基础</span>
+        <span>数据结构栈</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="">Linux 基础</a>
+                <a href="">数据结构栈</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -225,12 +225,12 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="../../../../tags/linux/">linux</a>
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2021-07-10
+                <i class="fa fa-calendar"></i> 2021-07-17
             </span>
             
         </div>
@@ -240,17 +240,17 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="">Linux 基础</a>
+                    <a href="">数据结构栈</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2021-07-10
+                <i class="fa fa-calendar"></i> 2021-07-17
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="../../../../tags/linux/">linux</a>
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
                 
                 
                 
@@ -258,109 +258,164 @@
         </center>
     </div>
     <div class="content-article">
-        <h2 id="linux-虚拟机安装"><a href="#linux-虚拟机安装" class="headerlink" title="linux 虚拟机安装"></a>linux 虚拟机安装</h2><ol>
-<li>VMware 安装 然后使用镜像安装linux 配置网络 连接xshell</li>
-<li>ssh -p 22 root@ip在win控制台直接连接linux</li>
-<li>shutdown –h now 立该进行关机</li>
-<li>shudown -h 1 “hello, 1 分钟后会关机了”</li>
-<li>shutdown –r now 现在重新启动计算机</li>
-<li>halt 关机，作用和上面一样.</li>
-<li>reboot 现在重新启动计算机</li>
-<li>sync 把内存的数据同步到磁盘.</li>
-</ol>
-<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><ol>
-<li>man [命令或配置文件]（功能描述：获得帮助信息）</li>
-<li>help 命令 （功能描述：获得shell内置命令的帮助信息）</li>
-<li>pwd [选项]（功能描述：显示当前工作目录的绝对路径）</li>
-<li>ls [选项]显示目录文件</li>
-<li>ll [选项]以列当前目录显示文件</li>
-<li>cd [选项] 定位  ..上一级</li>
-<li>ctrl+z 强制退出</li>
-<li>ctrl+x 暂停</li>
-</ol>
-<h2 id="目录操作"><a href="#目录操作" class="headerlink" title="目录操作"></a>目录操作</h2><h3 id="pwd-选项-显示当前工作目录的绝对路径"><a href="#pwd-选项-显示当前工作目录的绝对路径" class="headerlink" title="pwd [选项] (显示当前工作目录的绝对路径)"></a>pwd [选项] (显示当前工作目录的绝对路径)</h3><h3 id="ls-选项-显示目录文件"><a href="#ls-选项-显示目录文件" class="headerlink" title="ls [选项]显示目录文件"></a>ls [选项]显示目录文件</h3><h3 id="ll-选项-以列当前目录显示文件"><a href="#ll-选项-以列当前目录显示文件" class="headerlink" title="ll [选项]以列当前目录显示文件"></a>ll [选项]以列当前目录显示文件</h3><h3 id="cd-选项-定位-上一级"><a href="#cd-选项-定位-上一级" class="headerlink" title="cd [选项] 定位  ..上一级"></a>cd [选项] 定位  ..上一级</h3><h3 id="mkdir-选项-名字-要创建的目录"><a href="#mkdir-选项-名字-要创建的目录" class="headerlink" title="mkdir [选项] [名字] 要创建的目录"></a>mkdir [选项] [名字] 要创建的目录</h3><ol>
-<li>-p ：创建多级目录</li>
-</ol>
-<h3 id="rmdir-选项-名字-指令删除空目录"><a href="#rmdir-选项-名字-指令删除空目录" class="headerlink" title="rmdir [选项] [名字] 指令删除空目录"></a>rmdir [选项] [名字] 指令删除空目录</h3><h3 id="rm-选项-名字-指令移除文件或目录-小心删库-rf"><a href="#rm-选项-名字-指令移除文件或目录-小心删库-rf" class="headerlink" title="rm [选项][名字]   指令移除文件或目录 小心删库 -rf"></a>rm [选项][名字]   指令移除文件或目录 小心删库 -rf</h3><ol>
-<li>-r ：递归删除整个文件夹 -f ： 强制删除不提示</li>
-</ol>
-<h3 id="touch指令创建空文件"><a href="#touch指令创建空文件" class="headerlink" title="touch指令创建空文件"></a>touch指令创建空文件</h3><h3 id="touch-文件名称"><a href="#touch-文件名称" class="headerlink" title="touch 文件名称"></a>touch 文件名称</h3><h3 id="cp-原文件-目标目录-拷贝文件"><a href="#cp-原文件-目标目录-拷贝文件" class="headerlink" title="cp [原文件] [目标目录] 拷贝文件"></a>cp [原文件] [目标目录] 拷贝文件</h3><ol>
-<li>强制覆盖不提示的方法：\cp</li>
-<li>-r ：递归复制整个文件夹</li>
-</ol>
-<h3 id="mv-移动文件与目录或重命名"><a href="#mv-移动文件与目录或重命名" class="headerlink" title="mv 移动文件与目录或重命名"></a>mv 移动文件与目录或重命名</h3><p>mv oldNameFile newNameFile (功能描述：重命名)<br>mv /temp/movefile /targetFolder (功能描述：移动文件)<br>mv [文件名] [路径] </p>
-<h3 id="cat-名字-查看文件内容"><a href="#cat-名字-查看文件内容" class="headerlink" title="cat [名字]查看文件内容"></a>cat [名字]查看文件内容</h3><ol>
-<li>-n ：显示行号</li>
-</ol>
-<h3 id="more-名字-基于vi的文本过滤器"><a href="#more-名字-基于vi的文本过滤器" class="headerlink" title="more[名字]基于vi的文本过滤器"></a>more[名字]基于vi的文本过滤器</h3><h3 id="less指令用来分屏查看文件内容（适用于大文件）"><a href="#less指令用来分屏查看文件内容（适用于大文件）" class="headerlink" title="less指令用来分屏查看文件内容（适用于大文件）"></a>less指令用来分屏查看文件内容（适用于大文件）</h3><ol>
-<li>空白键 向下翻动一页；</li>
-<li>[pagedown] 向下翻动一页</li>
-<li>[pageup] 向上翻动一页；</li>
-<li>/字串 向下搜寻『字串』的功能；n：向下查找；N：向上查找；</li>
-<li>?字串 向上搜寻『字串』的功能；n：向上查找；N：向下查找；</li>
-<li>q 离开 less 这个程序；</li>
-</ol>
-<h3 id="echo-选项-输出内容-输出内容到控制台。"><a href="#echo-选项-输出内容-输出内容到控制台。" class="headerlink" title="echo [选项] [输出内容] 输出内容到控制台。"></a>echo [选项] [输出内容] 输出内容到控制台。</h3><h3 id="head-用于显示文件的开头部分内容"><a href="#head-用于显示文件的开头部分内容" class="headerlink" title="head 用于显示文件的开头部分内容"></a>head 用于显示文件的开头部分内容</h3><ol>
-<li>head 文件 (功能描述：查看文件头10行内容)</li>
-<li>head -n 5 文件 (功能描述：查看文件头5行内容，5可以是任意行数)</li>
-<li>默认情况下head指令显示文件的前10行内容</li>
-</ol>
-<h3 id="tail-选项-文件-前10行"><a href="#tail-选项-文件-前10行" class="headerlink" title="tail [选项] [文件] 前10行"></a>tail [选项] [文件] 前10行</h3><ol>
-<li>tail 文件 （功能描述：查看文件头10行内容）</li>
-<li>tail -n 5 文件 （功能描述：查看文件头5行内容，5可以是任意行数）</li>
-<li>tail -f 文件 （功能描述：实时追踪该文档的所有更新）<br>日志查看 </li>
-</ol>
-<h3 id="文件追加"><a href="#文件追加" class="headerlink" title="文件追加"></a>文件追加</h3><ol>
-<li>ls -l &gt;文件 （功能描述：列表的内容写入文件a.txt中（覆盖写））</li>
-<li>ls -al &gt;&gt;文件 （功能描述：列表的内容追加到文件aa.txt的末尾）</li>
-<li>cat 文件1 &gt; 文件2 （功能描述：将文件1的内容覆盖到文件2）</li>
-<li>echo “内容”&gt;&gt; 文件</li>
-</ol>
-<h3 id="ln-s-原文件或目录-软链接名"><a href="#ln-s-原文件或目录-软链接名" class="headerlink" title="ln -s [原文件或目录] [软链接名]"></a>ln -s [原文件或目录] [软链接名]</h3><p>当我们使用pwd指令查看目录时，仍然看到的是软链接所在目录。</p>
-<h3 id="find-name-‘文件名’"><a href="#find-name-‘文件名’" class="headerlink" title="find -name ‘文件名’"></a>find -name ‘文件名’</h3><ol>
-<li>-name&lt;查询方式&gt; 按照指定的文件名查找模式查找文件</li>
-<li>-user&lt;用户名&gt; 查找属于指定用户名所有文件</li>
-<li>-size&lt;文件大小&gt; 按照指定的文件大小查找文件。</li>
-</ol>
-<h3 id="history指令-查看历史指令"><a href="#history指令-查看历史指令" class="headerlink" title="history指令 查看历史指令"></a>history指令 查看历史指令</h3><h3 id="date指令-显示当前日期"><a href="#date指令-显示当前日期" class="headerlink" title="date指令-显示当前日期"></a>date指令-显示当前日期</h3><ol>
-<li>date （功能描述：显示当前时间）</li>
-<li>date +%Y （功能描述：显示当前年份）</li>
-<li>date +%m （功能描述：显示当前月份）</li>
-<li>date +%d （功能描述：显示当前是哪一天）</li>
-<li>date “+%Y-%m-%d %H:%M:%S”（功能描述：显示年月日时分秒）</li>
-<li>date -s 字符串时间 设置时间</li>
-</ol>
-<h3 id="cal查看日历"><a href="#cal查看日历" class="headerlink" title="cal查看日历"></a>cal查看日历</h3><p>cal [选项]</p>
-<h3 id="locate-搜索文件"><a href="#locate-搜索文件" class="headerlink" title="locate 搜索文件"></a>locate 搜索文件</h3><p>由于locate指令基于数据库进行查询，所以第一次运行前，必须使用updatedb指令创建locate数据库。</p>
-<h2 id="tab-自动补全代码或者命令，连续按两次"><a href="#tab-自动补全代码或者命令，连续按两次" class="headerlink" title="[tab]自动补全代码或者命令，连续按两次"></a>[tab]自动补全代码或者命令，连续按两次</h2><h3 id="grep指令和-管道符号"><a href="#grep指令和-管道符号" class="headerlink" title="grep指令和 管道符号 |"></a>grep指令和 管道符号 |</h3><p>grep [选项] 查找内容 源文件</p>
-<h3 id="gzip-gunzip-指令"><a href="#gzip-gunzip-指令" class="headerlink" title="gzip/gunzip 指令"></a>gzip/gunzip 指令</h3><ol>
-<li>gzip 用于压缩文件， gunzip 用于解压的</li>
-<li>gzip 文件 （功能描述：压缩文件，只能将文件压缩为*.gz文件）</li>
-<li>gunzip 文件.gz （功能描述：解压缩文件命令）<h3 id="zip-unzip-指令"><a href="#zip-unzip-指令" class="headerlink" title="zip/unzip 指令"></a>zip/unzip 指令</h3></li>
-<li>zip 用于压缩文件， unzip 用于解压的，这个在项目打包发布中很有用的</li>
-<li>zip [选项] XXX.zip 将要压缩的内容（功能描述：压缩文件和目录的命令）</li>
-<li>unzip [选项] XXX.zip （功能描述：解压缩文件） • zip常用选项</li>
-</ol>
-<p>-r：递归压缩，即压缩目录<br>4) unzip的常用选项<br>-d&lt;目录&gt; ：指定解压后文件的存放目录</p>
-<h3 id="tar-指令"><a href="#tar-指令" class="headerlink" title="tar 指令"></a>tar 指令</h3><ol>
-<li>tar 指令 是打包指令，最后打包后的文件是 .tar.gz 的文件。</li>
-<li>tar [选项] XXX.tar.gz 打包的内容 (功能描述：打包目录，压缩后的文件格式.tar.gz) <h2 id="vim编辑器的使用-vi为打开文件"><a href="#vim编辑器的使用-vi为打开文件" class="headerlink" title="vim编辑器的使用 vi为打开文件"></a>vim编辑器的使用 vi为打开文件</h2>vim 有三种基本模式 普通模式 编辑模式 命令行模式</li>
-<li>dd 删除该行</li>
-<li>u: 撤销之前一次操作</li>
-<li>yy 复制该行</li>
-<li>p: 粘贴该行</li>
-<li>esc 切换模式</li>
-<li>:wq 保存退出</li>
-<li>G 指定首行</li>
-<li>gg指定尾行</li>
-</ol>
-<img src="https://images.cnblogs.com/cnblogs_com/zengyongjoy/Screenshot.png" class="[class names]" title="[300] [height] [1 [1]]">     
+        <pre><code class="bash">实验项目名称：栈与队列操作的实现
+实验目的与要求：
+1.基础知识:掌握数据结构中栈和队列的相关知识;掌握C或VC++语言中程序设计的方法.
+2.程序功能:
+(1)参考教材相关算法，采用顺序存储存储实现栈的建立与初始化、入栈、出栈、判断栈空等操作;
+(2)参考教材相关算法，采用顺序存储或链式存储实现队列的建立与初始化、销毁队列、入队列、出队列、判断队列为空等操作;
+●实验性质:验证性(4学时，其中栈2学时，队列2学时)
+说明：●说明:每种存储结构下算法实现均包含的主要函数有:主函数、操作界面、建栈(队列)、入栈(入队列)、出栈(出队列) ,应有相关注释。
+注意：
+(1) 主函数调用子函数的逻辑顺序一主函数调用建栈(建队列)子函数应在调用入/出栈(队列)等子函数之前，这须在主函数中进行条件控制。
+(2)2.在选定存储结构后，需要特别关注“栈不存在”和“空栈”、“队列不存在”和“空队列”的语句表达方式以及它们的使用时机和方式。
+顺序式栈
+源代码：
+#include&lt;stdio.h&gt;
+#include&lt;malloc.h&gt;
+#define OVERFLOW  0
+#define OK 1
+#define ERROR 0
+#define STACK_INIT_SIZE 100
+#define STACKINCREMENT 10
+typedef int Status;
+typedef int SElemType;
+typedef struct
+&#123;
+    SElemType *base;
+    SElemType *top;
+    int stacksize;
+&#125;SqStack;
 
-<h2 id="linux-安装-java"><a href="#linux-安装-java" class="headerlink" title="linux 安装 java"></a>linux 安装 java</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> java-devel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="java编译运行"><a href="#java编译运行" class="headerlink" title="java编译运行"></a>java编译运行</h2><ol>
-<li>javac +文件名</li>
-<li>java  +类名无后缀</li>
-</ol>
+Status InitStack(SqStack &amp;S)//构造一个空栈
+&#123;
+    S.base=(SElemType*)malloc(STACK_INIT_SIZE*sizeof(SElemType));
+    if(!S.base)return(OVERFLOW);
+    S.top=S.base;
+    S.stacksize=STACK_INIT_SIZE;
+    return OK;
+&#125;
+
+Status Push(SqStack &amp;S, SElemType e)//插入元素e为新的栈顶元素
+&#123;
+    if(S.top - S.base &gt;= S.stacksize)   
+    &#123;
+    S.base=(SElemType*)realloc(S.base,(S.stacksize+STACKINCREMENT)*sizeof(SElemType));
+    if(!S.base)return(OVERFLOW);
+    S.top=S.base + S.stacksize;
+    S.stacksize += STACKINCREMENT;
+    &#125;
+    *S.top++=e;
+    return OK;
+&#125;
+
+Status Pop(SqStack &amp;S,SElemType &amp;e)//若栈不为空，则删除栈顶元素，用e返回其值
+&#123;
+    if(S.top == S.base)
+    return ERROR;
+    e=*--S.top;
+    return OK;
+&#125;
+
+Status StackEmpty(SqStack S)//判断是否为空栈
+&#123;
+    if(S.top==S.base)
+    return OK;
+    else
+    return ERROR;
+&#125;
+
+Status PrintStack(SqStack S)//输出栈
+&#123;
+    int*p;
+    p=S.base;
+    while(p!=S.top)
+    &#123;
+        printf(&quot;%d &quot;,*p);
+        p++;
+    &#125;
+    return 0;
+&#125;
+
+Status GetTop(SqStack S,SElemType &amp;e)//输出栈顶元素
+&#123;
+    if(S.top == S.base)
+    return ERROR;
+    e = *(S.top-1);
+    return OK;
+&#125;
+
+Status OperateMenu(int num)
+&#123;
+    printf(&quot;------****操作菜单****------\n\n&quot;);
+    printf(&quot;------    0 退出系统\n&quot;);
+    printf(&quot;------    1 插入一个元素\n&quot;);
+    printf(&quot;------    2 删除栈顶元素\n&quot;);
+    printf(&quot;------    3 判断是否为空栈\n&quot;);
+    printf(&quot;------    4 输出栈中全部元素\n&quot;);
+    printf(&quot;------    5 返回栈顶元素\n&quot;);
+    printf(&quot;------    请选择你所需要的操作\n&quot;);
+    scanf(&quot;%d&quot;,&amp;num);
+    return num;
+&#125;
+
+int main()
+&#123;
+    SqStack S;
+    SElemType e;
+    int num=-1;
+    if(InitStack(S))
+    &#123;printf(&quot;------  顺序栈创建成功\n&quot;);&#125;
+    while(num!=0)
+    &#123;
+        &#123;
+       num=OperateMenu(num);
+    &#125;
+    switch(num)
+    &#123;
+        case 1:    
+            printf(&quot;输入入栈元素e:&quot;);
+            scanf(&quot;%d&quot;,&amp;e);
+            if(!Push(S,e))
+            printf(&quot;输入不合法&quot;);
+            else
+            printf(&quot;已经将%d存入顺序栈\n&quot;, e);
+            printf(&quot;顺序栈为\n&quot;);
+            PrintStack(S);//输出栈
+            printf(&quot;\n&quot;);break;
+        case 2:
+            if(StackEmpty(S))
+            printf(&quot;栈为空栈\n&quot;);
+            else
+            &#123;Pop(S,e);
+            printf(&quot;栈顶元素%d已删除\n&quot;,e);
+            printf(&quot;\n&quot;);&#125;
+            break;
+        case 3:
+            if(StackEmpty(S))
+            printf(&quot;栈为空栈\n&quot;);
+            else
+            printf(&quot;不是空栈\n&quot;);break;
+        case 4:
+            if(StackEmpty(S))
+            printf(&quot;栈为空栈\n&quot;);
+            else
+            &#123;
+printf(&quot;顺序栈为\n&quot;);
+PrintStack(S);//输出栈
+            printf(&quot;\n&quot;);&#125;break;
+        case 5:
+        if(StackEmpty(S))
+        printf(&quot;栈为空栈\n&quot;);
+        else
+        &#123;GetTop(S,e);
+        printf(&quot;栈顶元素为：%d&quot;,e);
+        printf(&quot;\n&quot;);&#125;
+        break;
+      &#125;
+     &#125;
+    &#125;
+</code></pre>
 
     </div>
 </article>
@@ -422,43 +477,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%93%88%E5%B8%8C%E8%A1%A8/">数据结构哈希表</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%93%88%E5%B8%8C%E8%A1%A8/">数据结构哈希表</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE/">数据结构图</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE/">数据结构图</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88/">数据结构栈</a>
+                    <a href="">数据结构栈</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A1%BA%E5%BA%8F%E8%A1%A8/">数据结构顺序表</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A1%BA%E5%BA%8F%E8%A1%A8/">数据结构顺序表</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
                 </span>
             </li>
             
@@ -476,7 +531,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
+                    <a href="../../10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
                 </span>
             </li>
             
@@ -504,7 +559,7 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="">Linux 基础</a>
+                    <a href="../../../03/21/hello-world/">有关建站</a>
                 </span>
             </li>
             
@@ -516,43 +571,43 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../03/22/%E5%85%B3%E4%BA%8E%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">关于进制转换</a>
+                    <a href="../../10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../../03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                    <a href="../../13/linux%E7%94%A8%E6%88%B7/">Linux用户</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE/">数据结构图</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%9B%BE/">数据结构图</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88/">数据结构栈</a>
+                    <a href="">数据结构栈</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="../../17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%93%88%E5%B8%8C%E8%A1%A8/">数据结构哈希表</a>
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
                 </span>
             </li>
             
@@ -585,21 +640,21 @@
                 
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 9.772183940679959px;" class="tag-cloud-link">hexo搭建</a>
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 17.68151756371214px;" class="tag-cloud-link">hexo搭建</a>
     
-    <a href="../../../../tags/linux/" style="font-size: 18.34257119815626px;" class="tag-cloud-link">linux</a>
+    <a href="../../../../tags/linux/" style="font-size: 9.445138479684655px;" class="tag-cloud-link">linux</a>
     
-    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 8.742964692610137px;" class="tag-cloud-link">数据库</a>
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 12.10280494311681px;" class="tag-cloud-link">数据库</a>
     
-    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 11.869903336928509px;" class="tag-cloud-link">网络</a>
+    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 17.625383161136824px;" class="tag-cloud-link">网络</a>
     
-    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 13.271382815946424px;" class="tag-cloud-link">计算机基础</a>
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 18.857293829175912px;" class="tag-cloud-link">计算机基础</a>
     
-    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/" style="font-size: 9.847955332286276px;" class="tag-cloud-link">数据结构、c语言</a>
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/" style="font-size: 18.030644889204723px;" class="tag-cloud-link">数据结构、c语言</a>
     
-    <a href="../../../../tags/kali%E3%80%81%E7%BD%91%E7%BB%9C%E3%80%81linux/" style="font-size: 10.461305698029953px;" class="tag-cloud-link">kali、网络、linux</a>
+    <a href="../../../../tags/kali%E3%80%81%E7%BD%91%E7%BB%9C%E3%80%81linux/" style="font-size: 12.187543991279325px;" class="tag-cloud-link">kali、网络、linux</a>
     
-    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19.167173373524754px;" class="tag-cloud-link">数据结构</a>
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14.536818071389067px;" class="tag-cloud-link">数据结构</a>
     
 </div>
                 

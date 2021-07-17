@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="White-X">
+    
+    
+    
+    
+    
+    
+    <title>数据结构图 | 白筱の猫舍</title>
+    <link href="https://WhiteXB.github.io" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="../../../../css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../../css/aos.css">
+<link rel="stylesheet" href="../../../../css/style.css">
+
+    
+<script src="../../../../js/jquery.min.js"></script>
+
+    
+<script src="../../../../js/bootstrap.min.js"></script>
+
+    
+<script src="../../../../js/aos.js"></script>
+
+    
+<script src="../../../../js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="../../../../js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '../../../../imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview7.jpg,preview8.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '../../../../imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="https://WhiteXB.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="../../../../archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="../../../../about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="../../../../message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="../../../../imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://WhiteXB.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">白筱の猫舍</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="../../../../index.html">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="../../../../archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../categories/Hexo/">Hexo</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/">hexo搭建</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../../../tags/linux/">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="../../../../tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="../../../../about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://WhiteXB.github.io">白筱の猫舍</a>
+        >
+        <span>数据结构图</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="">数据结构图</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-07-17
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="">数据结构图</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-07-17
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/">数据结构、c语言</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>实验项目名称：图的操作的实现<br>实验目的与要求:<br>1.基础知识:掌握数据结构中图的相关知识;掌握C或VC+ +语言中程序设计的方法.<br>2.参考教材相关算法，完成以下程序功能:<br>(1)利用邻接矩阵完成建图(能力好的同学可以选用邻接表结构建图) ;<br>(2)利用广度优先搜索或深度优先搜索遍历算法编写对已建图的遍历工作;<br>(3)打印输出图的顶点表和邻接矩阵(若选作邻接表，则打印邻接表的相应元素值)<br>(4)实验性质:验证性(4学时)<br>说明:程序包含的主要函数:主函数、建图、搜索遍历、打印图、操作菜单函数和以上函数中的嵌套子函数，以及主函数，另外添加相关注释。<br>注意:在主函数调用子函数流程中体现先建图后遍历和其它操作的条件控制，即在调用除建图算法以外的其它所有算法前，先判断图是否已经建立，若没建图，只能先建图，不能做其它操作。由于实验中图采用邻接矩阵结构，该结构在参考代码中被设计成静态二维数组，因此可以考虑使用状态开关变量flag的方式来判断建图是否完成，即没建图前flag=0,建图后就置flag=1,在其它运算前判断flag==1时才可以操作。<br>图源代码：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#include&lt;stdio.h></span>
+<span class="token comment">#include&lt;limits.h></span>
+<span class="token comment">#include&lt;windows.h></span>
+<span class="token comment">#define INFINITY INT_MAX</span>
+<span class="token comment">#define MAX_VERTEX_NUM 20</span>
+<span class="token comment">#define OK 1</span>
+typedef int Status<span class="token punctuation">;</span>
+typedef enum<span class="token punctuation">&#123;</span>DG,DN,UDG,UDN<span class="token punctuation">&#125;</span>GraphKind<span class="token punctuation">;</span>
+typedef int VRType<span class="token punctuation">;</span>
+typedef char VertexType<span class="token punctuation">;</span>
+typedef char* InfoType<span class="token punctuation">;</span>
+typedef struct ArcCell
+<span class="token punctuation">&#123;</span>
+    VRType    adj<span class="token punctuation">;</span>//顶点间关系，无权图取1或0<span class="token punctuation">;</span>有权图取权值类型
+    InfoType *info<span class="token punctuation">;</span>//该弧相关信息的指针
+<span class="token punctuation">&#125;</span>ArcCell,AdjMatrix<span class="token punctuation">[</span>MAX_VERTEX_NUM<span class="token punctuation">]</span><span class="token punctuation">[</span>MAX_VERTEX_NUM<span class="token punctuation">]</span><span class="token punctuation">;</span>
+typedef struct
+<span class="token punctuation">&#123;</span>
+    VertexType vexs<span class="token punctuation">[</span>MAX_VERTEX_NUM<span class="token punctuation">]</span><span class="token punctuation">;</span>//顶点表，用一维向量即可（n）
+    AdjMatrix  arcs<span class="token punctuation">;</span> //邻接矩阵n*n
+    int vexnum,arcnum<span class="token punctuation">;</span>//顶点总数n，弧<span class="token punctuation">(</span>边<span class="token punctuation">)</span>总数e
+    GraphKind kind<span class="token punctuation">;</span>//图的种类标志
+<span class="token punctuation">&#125;</span>MGraph<span class="token punctuation">;</span>
+boolean visited<span class="token punctuation">[</span>MAX_VERTEX_NUM<span class="token punctuation">]</span><span class="token punctuation">;</span>
+Status<span class="token punctuation">(</span>*VisitFunc<span class="token punctuation">)</span><span class="token punctuation">(</span>MGraph G,int <span class="token function">v</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+Status LocateVex<span class="token punctuation">(</span>MGraph G,char <span class="token function">v</span><span class="token punctuation">)</span>//定位操作：对顶点v定位，返回该顶点在数组的下标，若找不到返回-1
+<span class="token punctuation">&#123;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        if<span class="token punctuation">(</span>v<span class="token operator">==</span>G.vexs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token builtin class-name">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token builtin class-name">return</span> -1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status CreateUDN<span class="token punctuation">(</span>MGraph <span class="token operator">&amp;</span>G<span class="token punctuation">)</span>//采用数组<span class="token punctuation">(</span>邻接矩阵<span class="token punctuation">)</span>表示法，构造无向网。
+<span class="token punctuation">&#123;</span>
+    G.kind<span class="token operator">=</span>UDN<span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"输入顶点个数和边数(以“,”作分界)：<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%d,%d"</span>,<span class="token operator">&amp;</span>G.vexnum,<span class="token operator">&amp;</span>G.arcnum<span class="token punctuation">)</span><span class="token punctuation">;</span>//输入顶点个数和边数
+    while<span class="token punctuation">(</span>G.vexnum<span class="token operator">></span>MAX_VERTEX_NUM<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        printf<span class="token punctuation">(</span><span class="token string">"最大顶点数为7，请重新输入"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        scanf<span class="token punctuation">(</span><span class="token string">"%d,%d"</span>,<span class="token operator">&amp;</span>G.vexnum,<span class="token operator">&amp;</span>G.arcnum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+        printf<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>请依次输入向量值<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        fflush<span class="token punctuation">(</span>stdin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        printf<span class="token punctuation">(</span><span class="token string">"第%d个:"</span>,i+1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        scanf<span class="token punctuation">(</span><span class="token string">"%c"</span>,<span class="token operator">&amp;</span>G.vexs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>//初始化邻接矩阵
+        for<span class="token punctuation">(</span>int <span class="token assign-left variable">j</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>j++<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            G.arcs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>.adj<span class="token operator">=</span>INFINITY<span class="token punctuation">;</span>
+            G.arcs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>.info<span class="token operator">=</span>NULL<span class="token punctuation">;</span>//该弧相关信息的指针，可在实验中删除？
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    char front,rear<span class="token punctuation">;</span>
+    int values<span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>输入一条边依附的两个顶点及权值(以“,”作分界)<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.arcnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        printf<span class="token punctuation">(</span><span class="token string">"第%d条："</span>,i+1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fflush<span class="token punctuation">(</span>stdin<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        scanf<span class="token punctuation">(</span><span class="token string">"%c,%c,%d"</span>,<span class="token operator">&amp;</span>rear,<span class="token operator">&amp;</span>front,<span class="token operator">&amp;</span>values<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        int m,n<span class="token punctuation">;</span>
+        <span class="token assign-left variable">m</span><span class="token operator">=</span> LocateVex <span class="token punctuation">(</span>G,rear<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token assign-left variable">n</span><span class="token operator">=</span> LocateVex <span class="token punctuation">(</span>G,front<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        if<span class="token punctuation">(</span>m<span class="token operator">==</span>-1<span class="token operator">||</span><span class="token assign-left variable">n</span><span class="token operator">==</span>-1<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            printf<span class="token punctuation">(</span><span class="token string">"输入顶点或不在此图中，请重新输入<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            i--<span class="token punctuation">;</span>
+            <span class="token builtin class-name">continue</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        G.arcs<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span>.adj<span class="token operator">=</span>values<span class="token punctuation">;</span>
+        G.arcs<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span>.adj<span class="token operator">=</span>values<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status printArcs<span class="token punctuation">(</span>MGraph G<span class="token punctuation">)</span>//打印图
+<span class="token punctuation">&#123;</span>
+    int i<span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        printf<span class="token punctuation">(</span><span class="token string">" %c"</span>,G.vexs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    for<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        printf<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>%c"</span>,G.vexs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        for<span class="token punctuation">(</span>int <span class="token assign-left variable">j</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>j++<span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>
+            if<span class="token punctuation">(</span>G.arcs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>.adj<span class="token operator">==</span>INFINITY<span class="token punctuation">)</span>
+            printf<span class="token punctuation">(</span><span class="token string">" #"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+            printf<span class="token punctuation">(</span><span class="token string">" %d"</span>,G.arcs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>.adj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status FirstAdjVex<span class="token punctuation">(</span>MGraph G,int <span class="token function">v</span><span class="token punctuation">)</span>//查找与顶点v的第一个邻接点，找到后立刻返回下标，
+<span class="token punctuation">&#123;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        if<span class="token punctuation">(</span>G.arcs<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span>.adj<span class="token operator">!=</span>INFINITY<span class="token punctuation">)</span>
+        <span class="token builtin class-name">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token builtin class-name">return</span> -1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status NextAdjVex<span class="token punctuation">(</span>MGraph G,int v,int w<span class="token punctuation">)</span>//查找与顶点v的w邻接点的下一个邻接点，找到后立刻返回下标，
+<span class="token punctuation">&#123;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">i</span><span class="token operator">=</span>w+1<span class="token punctuation">;</span>i<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>i++<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        if<span class="token punctuation">(</span>G.arcs<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span>.adj<span class="token operator">!=</span>INFINITY<span class="token punctuation">)</span>
+        <span class="token builtin class-name">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token builtin class-name">return</span> -1<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status DFS<span class="token punctuation">(</span>MGraph G,int <span class="token function">v</span><span class="token punctuation">)</span>//从第v个顶点出发递归深度优先遍历图G
+<span class="token punctuation">&#123;</span>
+    visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token operator">=</span>TRUE<span class="token punctuation">;</span>
+    VisitFunc<span class="token punctuation">(</span>G,v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>int <span class="token assign-left variable">w</span><span class="token operator">=</span>FirstAdjVex<span class="token punctuation">(</span>G,v<span class="token punctuation">)</span><span class="token punctuation">;</span>w<span class="token operator">></span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token assign-left variable">w</span><span class="token operator">=</span>NextAdjVex<span class="token punctuation">(</span>G,v,w<span class="token punctuation">))</span>
+    <span class="token punctuation">&#123;</span>
+        if<span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        DFS<span class="token punctuation">(</span>G,w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status DFSTraverse<span class="token punctuation">(</span>MGraph G,Status<span class="token punctuation">(</span>*Visit<span class="token punctuation">)</span><span class="token punctuation">(</span>MGraph G,int <span class="token function">v</span><span class="token punctuation">))</span>//深度优先遍历
+<span class="token punctuation">&#123;</span>
+    VisitFunc <span class="token operator">=</span> Visit<span class="token punctuation">;</span>
+    int <span class="token function">v</span><span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>v<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>v<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>v++<span class="token punctuation">)</span>
+    visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token operator">=</span>false<span class="token punctuation">;</span>
+    for<span class="token punctuation">(</span>v<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>v<span class="token operator">&lt;</span>G.vexnum<span class="token punctuation">;</span>v++<span class="token punctuation">)</span>
+    if<span class="token punctuation">(</span><span class="token operator">!</span>visited<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    DFS<span class="token punctuation">(</span>G,v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status printAdjVex<span class="token punctuation">(</span>MGraph G,int <span class="token function">v</span><span class="token punctuation">)</span>//访问顶点v输出
+<span class="token punctuation">&#123;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"%c "</span>,G.vexs<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status DestroyGraph<span class="token punctuation">(</span>MGraph <span class="token operator">&amp;</span>G<span class="token punctuation">)</span>//销毁图
+<span class="token punctuation">&#123;</span>
+    G.vexnum<span class="token operator">=</span>NULL<span class="token punctuation">;</span>
+    G.arcnum<span class="token operator">=</span>NULL<span class="token punctuation">;</span>
+    <span class="token builtin class-name">return</span> OK<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+Status OperateMenu<span class="token punctuation">(</span>int num<span class="token punctuation">)</span>//菜单函数
+<span class="token punctuation">&#123;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------****操作菜单****------<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	printf<span class="token punctuation">(</span><span class="token string">"------    0 退出系统<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    1 建图<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    2 打印图<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    3 深度遍历<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    4 销毁图<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    printf<span class="token punctuation">(</span><span class="token string">"------    请选择你所需要的操作<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    scanf<span class="token punctuation">(</span><span class="token string">"%d"</span>,<span class="token operator">&amp;</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token builtin class-name">return</span> num<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+
+<span class="token function-name function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    MGraph G<span class="token punctuation">;</span>
+    int <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    int <span class="token assign-left variable">num</span><span class="token operator">=</span>-1<span class="token punctuation">;</span>  
+    while<span class="token punctuation">(</span>num<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token punctuation">&#123;</span>
+       <span class="token assign-left variable">num</span><span class="token operator">=</span>OperateMenu<span class="token punctuation">(</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    switch<span class="token punctuation">(</span>num<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token keyword">case</span> <span class="token number">1</span>:
+        <span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+        CreateUDN<span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">2</span>:
+        if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>printf<span class="token punctuation">(</span><span class="token string">"图不存在<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span>
+        printArcs<span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">3</span>:
+        if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>printf<span class="token punctuation">(</span><span class="token string">"图不存在<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span>
+        DFSTraverse<span class="token punctuation">(</span>G,printAdjVex<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token number">4</span>:
+        if<span class="token punctuation">(</span>flag<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#123;</span>printf<span class="token punctuation">(</span><span class="token string">"图不存在<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token builtin class-name">break</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">&#123;</span>DestroyGraph<span class="token punctuation">(</span>G<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token assign-left variable">flag</span><span class="token operator">=</span><span class="token number">0</span>；
+        printf<span class="token punctuation">(</span><span class="token string">"已销毁图<span class="token entity" title="\n">\n</span>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span>break<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="../../../../search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            White-X
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="../../../../imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%93%88%E5%B8%8C%E8%A1%A8/">数据结构哈希表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="">数据结构图</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8C%E5%8F%89%E6%A0%91/">数据结构二叉树</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88/">数据结构栈</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%A1%BA%E5%BA%8F%E8%A1%A8/">数据结构顺序表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../15/%E5%9C%A8linux%E8%99%9A%E6%8B%9F%E6%9C%BAkali%E4%B8%AD%E7%9A%84wifi%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB/">在Linux虚拟机kali中的wifi无线攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../13/linux%E7%94%A8%E6%88%B7/">Linux用户</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../10/python-wifi-%E7%A0%B4%E8%A7%A3%E4%BB%A5%E5%8F%8A%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E5%BA%93/">Python Wifi 破解以及生成密码库</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/25/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/21/hello-world/">有关建站</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../../03/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84/">数据库的三级模式结构</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../13/linux%E7%94%A8%E6%88%B7/">Linux用户</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../../15/%E5%9C%A8linux%E8%99%9A%E6%8B%9F%E6%9C%BAkali%E4%B8%AD%E7%9A%84wifi%E6%97%A0%E7%BA%BF%E6%94%BB%E5%87%BB/">在Linux虚拟机kali中的wifi无线攻击</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="">数据结构图</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%88/">数据结构栈</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%93%BE%E8%A1%A8/">数据结构链表</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E9%98%9F%E5%88%97/">数据结构队列</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%93%88%E5%B8%8C%E8%A1%A8/">数据结构哈希表</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="../../../../tags/hexo%E6%90%AD%E5%BB%BA/" style="font-size: 13.702474515210621px;" class="tag-cloud-link">hexo搭建</a>
+    
+    <a href="../../../../tags/linux/" style="font-size: 13.921780263214934px;" class="tag-cloud-link">linux</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.94503613445222px;" class="tag-cloud-link">数据库</a>
+    
+    <a href="../../../../tags/%E7%BD%91%E7%BB%9C/" style="font-size: 10.619823288508325px;" class="tag-cloud-link">网络</a>
+    
+    <a href="../../../../tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 16.592749110413642px;" class="tag-cloud-link">计算机基础</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81c%E8%AF%AD%E8%A8%80/" style="font-size: 13.953685758733405px;" class="tag-cloud-link">数据结构、c语言</a>
+    
+    <a href="../../../../tags/kali%E3%80%81%E7%BD%91%E7%BB%9C%E3%80%81linux/" style="font-size: 15.333351605979365px;" class="tag-cloud-link">kali、网络、linux</a>
+    
+    <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 18.583300128792484px;" class="tag-cloud-link">数据结构</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://www.snut.com" target="_blank">陕西理工大学</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/WhiteXB" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://space.bilibili.com/33440117" target="_blank">B站</a>
+    </li>
+    
+    <li>
+        <a href="https://white-x.top/ForMother-master/index.html" target="_blank">母亲节礼物</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2021 White-X Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="../../../../js/activate-power-mode.js"></script>
+
+
+<audio style="display:none; height: 0" id="bg-music" preload="auto" src="http://music.163.com/song/media/outer/url?id=1841002409.mp3" loop="loop"></audio>
+<script>
+    $(document).ready(function(){
+            autoPlayMusic();
+            audioAutoPlay();
+        });
+        function audioAutoPlay() {
+            var audio = document.getElementById('bg-music');
+            audio.play();
+            document.addEventListener("WeixinJSBridgeReady", function () {
+                audio.play();
+            }, false);
+        }
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+
+</script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '../../../../imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="../../../../js/hs.js"></script>
+<script src="../../../../js/blog.js"></script>
+
+
+
+<script src="../../../../js/oni.js"></script>
+
+
+
+
+</html>
+
+
+<link rel="stylesheet" href="/live2d/css/live2d.css" />
+</head>
+<body>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://white-x.top'
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>
